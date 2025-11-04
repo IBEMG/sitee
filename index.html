@@ -44,7 +44,7 @@
         }
 
         .logo-img {
-            height: 70px;
+            height: 90px;
             width: auto;
             object-fit: contain;
         }
@@ -221,7 +221,83 @@
             line-height: 1.8;
         }
 
-        /* Events Section */
+        /* Featured Project */
+        .featured-project {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 5rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .featured-project .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #2c5f8d, #4a90c9);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-content h2 {
+            font-size: 2.5rem;
+            color: #2c5f8d;
+            margin-bottom: 1rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-content p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .project-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .highlight-icon {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .featured-project .container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 300px;
+            }
+        }
         .events {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -488,6 +564,38 @@
             <div class="card-icon">❤️</div>
             <h3>Ação Social</h3>
             <p>Levando o amor de Cristo através de ações práticas na comunidade.</p>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project">
+        <div class="container">
+            <div class="project-image">🎁</div>
+            <div class="project-content">
+                <h2>Sonho de Criança</h2>
+                <h3>Celebração Infantil</h3>
+                <p>Um projeto especial da Igreja Batista Emanuel dedicado a levar alegria, amor e esperança para as crianças da nossa comunidade.</p>
+                <p>Através do Sonho de Criança, realizamos celebrações infantis que transformam vidas, ensinando valores cristãos de forma lúdica e criando memórias inesquecíveis para as crianças e suas famílias.</p>
+                
+                <div class="project-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎉</span>
+                        <span><strong>Festas & Celebrações</strong></span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📚</span>
+                        <span><strong>Ensino Bíblico</strong></span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎨</span>
+                        <span><strong>Atividades Criativas</strong></span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">❤️</span>
+                        <span><strong>Amor & Cuidado</strong></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
