@@ -863,8 +863,9 @@ nav ul {
             }
           /* --- Correção para exibir o título no mobile --- */
 /* Fundo azul com profundidade (degradê da esquerda para a direita) */
+/* Fundo azul com profundidade */
 body {
-  background: linear-gradient(to right, #0a1f44, #003366, #00509e);
+  background: linear-gradient(to right, #e0e7ff, #003366);
   color: white;
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -879,7 +880,7 @@ body {
   padding: 15px 30px;
 }
 
-/* Logo e nome lado a lado */
+/* Logo e nome */
 .logo {
   display: flex;
   align-items: center;
@@ -891,10 +892,12 @@ body {
   height: auto;
 }
 
+/* Nome da igreja */
 .logo span {
-  color: #ffffff;        /* branco para contraste */
+  color: #0044cc;          /* azul forte e visível */
   font-size: 1.4rem;
   font-weight: 600;
+  white-space: nowrap;     /* impede quebra no mobile */
 }
 
 /* Menu */
@@ -905,13 +908,13 @@ body {
 }
 
 .navbar ul li a {
-  color: #ffffff;         /* menu branco */
+  color: #ffffff;         /* branco */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-  color: #4da3ff;         /* azul mais claro ao passar o mouse */
+  color: #4da3ff;         /* azul claro no hover */
 }
 
 /* Mobile */
@@ -922,12 +925,17 @@ body {
   }
 
   .logo {
-    flex-direction: row;   /* mantém logo e texto lado a lado */
+    flex-direction: row;   /* logo e texto lado a lado */
     justify-content: center;
+  }
+
+  .logo img {
+    width: 50px;
   }
 
   .logo span {
     font-size: 1.2rem;
+    color: #0044cc;        /* mantém azul no mobile */
   }
 
   .navbar ul {
@@ -936,6 +944,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
         }
@@ -1241,6 +1250,7 @@ body {
     </script>
 </body>
 </html>
+
 
 
 
