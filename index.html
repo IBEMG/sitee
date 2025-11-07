@@ -861,6 +861,42 @@ nav ul {
             .project-content h3 {
                 font-size: 1.3rem;
             }
+          /* --- Correção para exibir o título no mobile --- */
+.logo span {
+  display: inline;         /* garante que o texto aparece */
+  color: white;            /* cor do texto */
+  font-size: 1.2rem;       /* tamanho adaptado pra celular */
+  font-weight: bold;
+}
+
+/* Ajustes no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;     /* empilha logo e menu */
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    flex-direction: column;     /* logo em cima, texto embaixo */
+    gap: 5px;
+  }
+
+  .logo img {
+    width: 60px;                /* um pouco menor no mobile */
+  }
+
+  .navbar ul {
+    flex-direction: column;     /* menu em coluna */
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+  }
+}
+
         }
     </style>
 </head>
@@ -1164,6 +1200,7 @@ nav ul {
     </script>
 </body>
 </html>
+
 
 
 
