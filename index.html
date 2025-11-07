@@ -23,9 +23,11 @@ nav ul {
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #0a1a4f, #001f7f, #0033a0);
+  color: white;
+  min-height: 100vh;
         }
 
         /* Header */
@@ -61,10 +63,10 @@ nav ul {
 }
 
 .logo img {
-  width: 50px; /* tamanho da logo */
+  width: 50px;
   height: auto;
-  border-radius: 8px; /* opcional, arredonda a imagem */
 }
+
 
 
 
@@ -722,10 +724,19 @@ nav ul {
                 left: 0;
             }
 
-            nav ul li {
-                width: 100%;
-                text-align: center;
-            }
+           .navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+          .navbar ul li a:hover {
+  background-color: white;
+  color: #0033a0;
+}
+
 
             nav a {
                 display: block;
@@ -1150,4 +1161,5 @@ nav ul {
     </script>
 </body>
 </html>
+
 
