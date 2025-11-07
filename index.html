@@ -88,7 +88,7 @@ nav ul {
   color: #4da3ff; /* azul claro ao passar o mouse */
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -98,19 +98,27 @@ nav ul {
   .logo {
     flex-direction: row;
     justify-content: center;
+    gap: 8px;
+  }
+
+  .logo img {
+    width: 45px; /* reduz ligeiramente a logo */
   }
 
   .logo span {
-    color: #0d1b8c; /* mantém azul no mobile */
-    font-size: 1.3rem;
+    font-size: 1rem;     /* nome menor */
+    color: #0d1b8c;      /* azul igual ao rodapé */
+    font-weight: 600;
+    white-space: nowrap; /* evita quebra */
   }
 
   .navbar ul {
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 8px;
+    gap: 10px;
   }
-}              
+}
 
 
 
@@ -1255,6 +1263,7 @@ nav ul {
     </script>
 </body>
 </html>
+
 
 
 
