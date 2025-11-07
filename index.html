@@ -862,40 +862,81 @@ nav ul {
                 font-size: 1.3rem;
             }
           /* --- Correção para exibir o título no mobile --- */
-.logo span {
-  display: inline;         /* garante que o texto aparece */
-  color: white;            /* cor do texto */
-  font-size: 1.2rem;       /* tamanho adaptado pra celular */
-  font-weight: bold;
+/* Fundo azul com profundidade (degradê da esquerda para a direita) */
+body {
+  background: linear-gradient(to right, #0a1f44, #003366, #00509e);
+  color: white;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Ajustes no mobile */
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 15px 30px;
+}
+
+/* Logo e nome lado a lado */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+.logo span {
+  color: #ffffff;        /* branco para contraste */
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Menu */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  color: #ffffff;         /* menu branco */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #4da3ff;         /* azul mais claro ao passar o mouse */
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;     /* empilha logo e menu */
+    flex-direction: column;
     align-items: center;
-    padding: 1rem;
   }
 
   .logo {
-    flex-direction: column;     /* logo em cima, texto embaixo */
-    gap: 5px;
+    flex-direction: row;   /* mantém logo e texto lado a lado */
+    justify-content: center;
   }
 
-  .logo img {
-    width: 60px;                /* um pouco menor no mobile */
+  .logo span {
+    font-size: 1.2rem;
   }
 
   .navbar ul {
-    flex-direction: column;     /* menu em coluna */
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .navbar ul li a {
-    font-size: 1rem;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
   }
 }
+
 
         }
     </style>
@@ -1200,6 +1241,7 @@ nav ul {
     </script>
 </body>
 </html>
+
 
 
 
