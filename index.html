@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+nav ul {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: #1a237e;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +30,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #1e5a8e 0%, #2980b9 100%);
             padding: 1.5rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             position: fixed;
@@ -44,8 +55,8 @@
         }
 
         .logo-img {
-            height: 90px;
-            width: auto;
+            height: 70px;
+            width: 70px;
             object-fit: contain;
         }
 
@@ -88,15 +99,23 @@
         }
 
         nav a:hover {
-            color: #e67e22;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
         /* Hero Section */
         .hero {
             margin-top: 90px;
             height: 600px;
-            background: linear-gradient(135deg, rgba(41, 128, 185, 0.9), rgba(52, 152, 219, 0.85)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232980b9" width="1200" height="600"/><path fill="%233498db" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background: linear-gradient(135deg, rgba(30, 90, 142, 0.95), rgba(41, 128, 185, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e5a8e" width="1200" height="600"/><path fill="%232980b9" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -146,14 +165,14 @@
         }
 
         .btn-primary {
-            background: #e67e22;
+            background: #2980b9;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #d35400;
+            background: #1e5a8e;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
         }
 
         .btn-secondary {
@@ -164,7 +183,7 @@
 
         .btn-secondary:hover {
             background: white;
-            color: #2980b9;
+            color: #1e5a8e;
             transform: translateY(-3px);
         }
 
@@ -179,7 +198,7 @@
 
         .welcome h2 {
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: #1e5a8e;
             margin-bottom: 1.5rem;
         }
 
@@ -209,18 +228,18 @@
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #e67e22;
+            border-top: 4px solid #2980b9;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 10px 30px rgba(30, 90, 142, 0.3);
         }
 
         .card-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #2980b9, #3498db);
+            background: linear-gradient(135deg, #1e5a8e, #2980b9);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -241,7 +260,7 @@
 
         .card h3 {
             font-size: 1.6rem;
-            color: #2c3e50;
+            color: #1e5a8e;
             margin-bottom: 1rem;
         }
 
@@ -252,7 +271,7 @@
 
         /* Featured Project */
         .featured-project {
-            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            background: linear-gradient(135deg, #2980b9 0%, #1e5a8e 100%);
             padding: 5rem 2rem;
             margin: 3rem 0;
         }
@@ -269,7 +288,7 @@
         .project-image {
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, #2980b9, #3498db);
+            background: linear-gradient(135deg, #1a1a2e, #2c3e50);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -326,7 +345,7 @@
         .highlight-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #2980b9, #3498db);
+            background: linear-gradient(135deg, #1e5a8e, #2980b9);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -354,7 +373,7 @@
 
         .events h2 {
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: #1e5a8e;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -371,18 +390,18 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
-            border-left: 4px solid #e67e22;
+            border-left: 4px solid #2980b9;
         }
 
         .event-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(41, 128, 185, 0.3);
+            box-shadow: 0 10px 30px rgba(30, 90, 142, 0.3);
         }
 
         .event-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #2980b9, #3498db);
+            background: linear-gradient(135deg, #1e5a8e, #2980b9);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -413,12 +432,12 @@
 
         .event-content h3 {
             font-size: 1.5rem;
-            color: #2c3e50;
+            color: #1e5a8e;
             margin-bottom: 0.8rem;
         }
 
         .event-date {
-            color: #e67e22;
+            color: #2980b9;
             font-weight: 600;
             margin-bottom: 0.5rem;
             display: flex;
@@ -430,7 +449,7 @@
         .event-date svg {
             width: 18px;
             height: 18px;
-            stroke: #e67e22;
+            stroke: #2980b9;
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
@@ -438,7 +457,7 @@
         }
 
         .event-time {
-            color: #2980b9;
+            color: #1e5a8e;
             font-weight: 600;
             margin-bottom: 0.5rem;
             display: flex;
@@ -450,7 +469,7 @@
         .event-time svg {
             width: 16px;
             height: 16px;
-            stroke: #2980b9;
+            stroke: #1e5a8e;
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
@@ -503,7 +522,7 @@
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #1a237e, #283593);
             color: white;
             padding: 5rem 2rem;
             text-align: center;
@@ -599,7 +618,7 @@
         }
 
         .social-icon:hover {
-            background: #e67e22;
+            background: #2980b9;
         }
 
         @keyframes fadeInUp {
@@ -813,7 +832,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.png" alt="IBE Logo" class="logo-img" onerror="this.style.display='none'">
+                <img src="https://i.imgur.com/YourLogoHere.png" alt="IBE Logo" class="logo-img" onerror="this.style.display='none'">
                 <span class="logo-text">Igreja Batista Emanuel</span>
             </div>
             <div class="menu-toggle" onclick="toggleMenu()">
