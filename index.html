@@ -38,6 +38,37 @@ nav ul {
             top: 0;
             z-index: 1000;
         }
+      /*logo*/
+      <nav class="navbar">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Logo do site">
+      <span>Meu Site</span>
+    </a>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+      .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white; /* ou outra cor do seu menu */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 50px; /* tamanho da logo */
+  height: auto;
+  border-radius: 8px; /* opcional, arredonda a imagem */
+}
+
+
+
+      
 
         nav {
             display: flex;
@@ -1119,3 +1150,4 @@ nav ul {
     </script>
 </body>
 </html>
+
