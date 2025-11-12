@@ -268,9 +268,15 @@
         /* --- Estilos da Nova Seção Projetos --- */
 
         .projects {
-           background: #ffffff;
-           padding: 5rem 0; /* remove o espaço lateral */
-            border-bottom: 5px solid #e9f5ff;
+            background: #ffffff;
+    padding: 5rem 0;
+    border-bottom: 5px solid #e9f5ff;
+    width: 100vw;       /* força ocupar toda a largura da viewport */
+    position: relative; /* garante alinhamento total */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw; /* remove eventuais margens automáticas */
+    margin-right: -50vw;
         }
 
         .projects h2 {
@@ -964,4 +970,5 @@
     </script>
 </body>
 </html>
+
 
