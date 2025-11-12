@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igreja Batista Emanuel - Monte Gordo</title>
+    
     <link rel="icon" type="image/png" href="logo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -19,8 +21,7 @@
             line-height: 1.6;
             color: #333;
             background: #ffffff;
-            /* Padding para evitar que o conteúdo fique atrás do header fixo */
-            padding-top: 90px; 
+            padding-top: 90px;
         }
 
         /* Header */
@@ -61,10 +62,10 @@
             font-weight: 600;
             color: #1e5a8e;
         }
-        
+
         /* Menu Toggle (Mobile) */
         .menu-toggle {
-            display: none; /* Esconde por padrão em desktop */
+            display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
@@ -88,7 +89,7 @@
         }
 
         nav a {
-            color: #ffffff;
+            color: #1e5a8e;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
@@ -101,7 +102,6 @@
 
         /* Hero Section */
         .hero {
-            /* Removido margin-top: 90px; pois body já tem padding-top */
             height: 600px;
             background: linear-gradient(135deg, rgba(30, 90, 142, 0.95), rgba(41, 128, 185, 0.9)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e5a8e" width="1200" height="600"/><path fill="%232980b9" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
@@ -165,10 +165,38 @@
             color: #1e5a8e;
             margin-bottom: 1.5rem;
         }
+
+        /* --- NOVO: Versículo da Semana --- */
+        #versiculo-da-semana {
+            background: #fff;
+            padding: 2rem 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #f8f9fa;
+        }
+
+        #versiculo-da-semana h2 {
+            font-size: 1.8rem;
+            color: #1e5a8e;
+            margin-bottom: 0.5rem;
+        }
+
+        #versiculo-display {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #2980b9;
+            font-weight: 600;
+            padding: 1rem;
+            border: 2px dashed #e9f5ff;
+            display: inline-block;
+            max-width: 800px;
+            margin: 10px auto 0;
+            border-radius: 8px;
+        }
         
         /* Cultos Fixos */
         .fixed-cults {
-            background: #e9f5ff; /* Fundo mais claro para destaque */
+            background: #e9f5ff;
             padding: 4rem 2rem;
         }
 
@@ -200,7 +228,7 @@
             margin: 0.3rem 0;
             color: #555;
         }
-
+        
         /* Events Section */
         .events {
             background: #f8f9fa;
@@ -212,9 +240,9 @@
 
         .event-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Reduzido o minmax para melhor ajuste móvel */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 2rem;
-            text-align: left; /* Alinhamento do texto da grid de volta para esquerda */
+            text-align: left;
         }
 
         .event-card {
@@ -240,7 +268,7 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        
+
         /* Footer */
         footer {
             background: #1e5a8e;
@@ -248,7 +276,7 @@
             text-align: center;
             padding: 2rem 1rem;
         }
-        
+
         footer p {
             margin: 0.5rem 0;
         }
@@ -277,7 +305,7 @@
             background-color: #128c7e;
         }
 
-        /* Modal (Estilos mantidos, apenas para referência) */
+        /* Modal (Estilos) */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
         .modal-content { background: white; margin: 5% auto; padding: 2rem; border-radius: 15px; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .modal-content h2 { color: #1e5a8e; margin-bottom: 1.5rem; }
@@ -287,10 +315,10 @@
         .form-group input:focus { outline: none; border-color: #2980b9; }
         .btn-close { background: #dc3545; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; margin-left: 1rem; }
         .admin-panel { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
-        .admin-content { background: white; margin: 2rem auto; padding: 2rem; max-width: 90%; border-radius: 15px; } /* Ajuste no max-width */
+        .admin-content { background: white; margin: 2rem auto; padding: 2rem; max-width: 90%; border-radius: 15px; }
         .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
         .admin-header h2 { color: #1e5a8e; }
-        .event-form { background: #f8f9fa; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; }
+        .form-section { background: #f8f9fa; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; }
         .event-list { margin-top: 2rem; }
         .event-item { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #2980b9; }
         .btn-delete { background: #dc3545; color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer; }
@@ -298,24 +326,23 @@
         /* Media Queries para Layout Responsivo (Celulares) */
         @media (max-width: 768px) {
             nav {
-                padding: 0 1.5rem; /* Reduzido padding */
+                padding: 0 1.5rem;
             }
             
             nav ul {
-                /* Configuração inicial do menu mobile */
                 position: absolute;
-                top: 100px; /* Abaixo do header */
+                top: 100px;
                 right: 0;
                 flex-direction: column;
                 width: 100%;
                 background: #f8f9fa;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
                 padding: 1rem 0;
-                display: none; /* Escondido por padrão */
+                display: none;
             }
 
             nav ul.open {
-                display: flex; /* Exibe quando a classe 'open' é adicionada */
+                display: flex;
             }
 
             nav ul li {
@@ -323,12 +350,16 @@
                 text-align: center;
             }
 
+            nav a {
+                color: #1e5a8e;
+            }
+
             .menu-toggle {
-                display: flex; /* Exibe o ícone de menu em mobile */
+                display: flex;
             }
             
             .hero h1 {
-                font-size: 2.5rem; /* Ajuste para caber melhor */
+                font-size: 2.5rem;
             }
 
             .hero p {
@@ -354,8 +385,12 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            #versiculo-display {
+                font-size: 1.1rem;
+            }
         }
-        
+
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
@@ -401,6 +436,10 @@
         </div>
     </section>
 
+    <section id="versiculo-da-semana">
+        <h2>Versículo para Gravar</h2>
+        <p id="versiculo-display">Carregando o Versículo...</p>
+    </section>
     <section class="content-section" id="sobre">
         <h2>Sobre Nós</h2>
         <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor.</p>
@@ -442,7 +481,6 @@
         <p>Monte Gordo, Camaçari-BA | <a href="tel:+5571992801895" style="color: white; text-decoration: none;">(71) 992801895</a></p>
         <p>E-mail:Contato@ibemg.com.br | Instagram: I.B.E.M.G</p>
         <p>© 2025 Todos os direitos reservados.</p>
-        
     </footer>
 
     <a href="https://wa.me/5571992801895" target="_blank" class="whatsapp-float" aria-label="Fale Conosco pelo WhatsApp">
@@ -464,12 +502,20 @@
     <div id="adminPanel" class="admin-panel">
         <div class="admin-content">
             <div class="admin-header">
-                <h2>Gerenciar Eventos</h2>
+                <h2>Gerenciar Conteúdo</h2>
                 <button class="btn-close" onclick="closeAdmin()">Fechar</button>
             </div>
 
-            <div class="event-form">
-                <h3>Adicionar Novo Evento</h3>
+            <div class="form-section">
+                <h3>📖 Atualizar Versículo da Semana</h3>
+                <div class="form-group">
+                    <label>Novo Versículo (Texto e Referência):</label>
+                    <input type="text" id="novoVersiculoInput" placeholder="Ex: João 3:16 - Porque Deus amou o mundo de tal maneira...">
+                </div>
+                <button class="btn btn-primary" onclick="updateVersiculo()">Atualizar Versículo</button>
+            </div>
+            <div class="form-section">
+                <h3>📅 Adicionar Novo Evento</h3>
                 <div class="form-group">
                     <label>Data:</label>
                     <input type="date" id="eventDate">
@@ -502,9 +548,13 @@
 
     <script>
         let isAdmin = false;
-        const STORAGE_KEY = 'ibe-eventos';
-        
-        // Eventos iniciais padrão
+        const STORAGE_KEY_EVENTS = 'ibe-eventos';
+        const STORAGE_KEY_VERSICULO = 'ibe-versiculo'; // NOVA CHAVE
+
+        // Versículo inicial (padrão)
+        const versiculoInicial = "Josué 1:9 - Esforça-te e tem bom ânimo.";
+
+        // Eventos iniciais padrão (SEM o campo 'versiculo' aqui, ele agora é separado)
         const eventosIniciais = [
             {
                 id: 1,
@@ -522,24 +572,81 @@
                 descricao: "Noite de oração e louvor com a juventude.",
                 local: "Igreja Batista Emanuel"
             },
-            {
-                id: 3,
-                data: "25/12/2025",
-                hora: "19:00",
-                evento: "Culto de Natal",
-                descricao: "Celebração do nascimento de Jesus.",
-                local: "Igreja Batista Emanuel"
-            }
         ];
-        
-        /* --- Funções de Admin --- */
+
+        /* --- Funções de Versículo (Novo) --- */
+
+        // 1. Salvar Versículo
+        async function saveVersiculo(versiculo) {
+            try {
+                localStorage.setItem(STORAGE_KEY_VERSICULO, versiculo);
+                return true;
+            } catch (error) {
+                console.error('Erro ao salvar versículo no storage:', error);
+                return false;
+            }
+        }
+
+        // 2. Carregar Versículo
+        async function loadVersiculo() {
+            const stored = localStorage.getItem(STORAGE_KEY_VERSICULO);
+            return stored || versiculoInicial;
+        }
+
+        // 3. Atualizar e Exibir Versículo (Função do Admin)
+        async function updateVersiculo() {
+            const input = document.getElementById('novoVersiculoInput');
+            const novoVersiculo = input.value.trim();
+
+            if (!novoVersiculo) {
+                alert('O campo do Versículo não pode estar vazio.');
+                return;
+            }
+
+            const salvou = await saveVersiculo(novoVersiculo);
+            
+            if (salvou) {
+                // Atualiza a exibição na página principal
+                document.getElementById('versiculo-display').textContent = novoVersiculo;
+                // Limpa o campo de entrada no admin
+                input.value = '';
+                alert('✅ Versículo da Semana atualizado com sucesso!');
+            } else {
+                alert('❌ Erro ao atualizar Versículo.');
+            }
+        }
+
+
+        /* --- Funções de Eventos (Adaptadas) --- */
+
+        // Buscar eventos (sem o campo versiculo)
+        async function getEvents() {
+            const stored = localStorage.getItem(STORAGE_KEY_EVENTS);
+            if (stored) {
+                return JSON.parse(stored);
+            }
+            await saveEvents([...eventosIniciais]);
+            return [...eventosIniciais];
+        }
+
+        // Salvar eventos
+        async function saveEvents(eventos) {
+            try {
+                localStorage.setItem(STORAGE_KEY_EVENTS, JSON.stringify(eventos));
+                return true;
+            } catch (error) {
+                console.error('Erro ao salvar eventos no storage:', error);
+                return false;
+            }
+        }
+
+        // Funções Admin e Adicionar Evento (inalteradas, mas sem campo versiculo)
 
         function checkPassword() {
             document.getElementById('passwordModal').style.display = 'block';
         }
 
         function validatePassword() {
-            // A senha 'IBEMG2002' está mantida
             const password = document.getElementById('passwordInput').value;
             if (password === 'IBEMG2002') {
                 isAdmin = true;
@@ -558,40 +665,18 @@
         function openAdmin() {
             document.getElementById('adminPanel').style.display = 'block';
             loadAdminEvents();
+            // Carrega o versículo atual para possível edição
+            loadVersiculo().then(v => {
+                document.getElementById('novoVersiculoInput').value = v === versiculoInicial ? '' : v;
+            });
         }
 
         function closeAdmin() {
             document.getElementById('adminPanel').style.display = 'none';
             isAdmin = false;
         }
-
-        /* --- Funções de Persistência e Atualização (Corrigidas) --- */
-
-        // Buscar eventos (com fallback para eventos iniciais)
-        async function getEvents() {
-             // Simulação de acesso a "storage". Em ambiente real, seria localStorage ou um DB.
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored) {
-                return JSON.parse(stored);
-            }
-            // Se não houver nada no storage, salva os eventos iniciais e retorna eles
-            await saveEvents([...eventosIniciais]);
-            return [...eventosIniciais];
-        }
-
-        // Salvar eventos
-        async function saveEvents(eventos) {
-            try {
-                // Simulação de salvar em "storage" usando localStorage.
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(eventos));
-                return true;
-            } catch (error) {
-                console.error('Erro ao salvar no storage:', error);
-                return false;
-            }
-        }
-
-        // Adicionar evento (Corrigida para garantir atualização)
+        
+        // Adicionar evento 
         async function addEvent() {
             const dateInput = document.getElementById('eventDate');
             const timeInput = document.getElementById('eventTime');
@@ -611,8 +696,8 @@
             }
 
             const evento = {
-                id: Date.now(), // ID único
-                data: date.split('-').reverse().join('/'), // Converte AAAA-MM-DD para DD/MM/AAAA
+                id: Date.now(), 
+                data: date.split('-').reverse().join('/'), 
                 hora: time,
                 evento: name,
                 descricao: desc || 'Sem descrição',
@@ -632,7 +717,6 @@
                 descInput.value = '';
                 localInput.value = '';
                 
-                // ATUALIZAÇÃO PRINCIPAL: Recarrega as listas após a modificação
                 await loadAdminEvents();
                 await loadPublicEvents();
                 
@@ -642,18 +726,16 @@
             }
         }
 
-        // Deletar evento (Corrigida para garantir atualização)
+        // Deletar evento 
         async function deleteEvent(id) {
             if (!confirm('❓ Deseja realmente excluir este evento?')) return;
 
             const eventos = await getEvents();
-            // Garante que o ID é tratado como número para a comparação
             const novosEventos = eventos.filter(e => e.id !== Number(id)); 
             
             const salvou = await saveEvents(novosEventos);
             
             if (salvou) {
-                // ATUALIZAÇÃO PRINCIPAL: Recarrega as listas após a modificação
                 await loadAdminEvents();
                 await loadPublicEvents();
                 alert('✅ Evento excluído com sucesso!');
@@ -661,17 +743,15 @@
                 alert('❌ Erro ao excluir evento. Tente novamente.');
             }
         }
-        
+
+
         /* --- Funções de Visualização --- */
 
         // Formatar data
         function formatarData(dataStr) {
-            // Espera dataStr no formato DD/MM/AAAA
             const partes = dataStr.split('/');
-            // Cria um objeto Date: new Date(ano, mes-1, dia)
             const data = new Date(partes[2], partes[1] - 1, partes[0]); 
             const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            // Adiciona a primeira letra maiúscula ao dia da semana
             const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
             return dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
         }
@@ -688,14 +768,12 @@
             
             const eventosFuturos = eventos
                 .filter(e => {
-                    // Converte DD/MM/AAAA para um objeto Date comparável
                     const partes = e.data.split('/');
                     const dataEvento = new Date(partes[2], partes[1] - 1, partes[0]);
                     dataEvento.setHours(0, 0, 0, 0);
                     return dataEvento >= hoje;
                 })
                 .sort((a, b) => {
-                    // Cria uma string comparável AAAA/MM/DDHHMM para ordenar
                     const dataHoraA = a.data.split('/').reverse().join('') + a.hora.replace(':', '');
                     const dataHoraB = b.data.split('/').reverse().join('') + b.hora.replace(':', '');
                     if (dataHoraA < dataHoraB) return -1;
@@ -730,7 +808,6 @@
             const eventos = await getEvents();
             
             const eventosOrdenados = eventos.sort((a, b) => {
-                // Cria uma string comparável AAAA/MM/DDHHMM
                 const dataHoraA = a.data.split('/').reverse().join('') + a.hora.replace(':', '');
                 const dataHoraB = b.data.split('/').reverse().join('') + b.hora.replace(':', '');
                 if (dataHoraA < dataHoraB) return -1;
@@ -754,7 +831,7 @@
                 </div>
             `).join('');
         }
-        
+
         // Toggle do Menu Mobile
         function toggleMenu() {
             const menu = document.getElementById('nav-menu');
@@ -764,6 +841,11 @@
 
         // Inicializar quando a página carregar
         window.addEventListener('load', async () => {
+            // Carrega e exibe o Versículo
+            loadVersiculo().then(versiculo => {
+                document.getElementById('versiculo-display').textContent = versiculo;
+            });
+            
             await loadPublicEvents();
             
             // Adiciona evento para fechar o menu ao clicar em um link (mobile)
@@ -780,15 +862,10 @@
         // Fechar modal ao clicar fora
         window.onclick = function(event) {
             const modal = document.getElementById('passwordModal');
-            const admin = document.getElementById('adminPanel');
             if (event.target == modal) {
                 closePasswordModal();
             }
-            // Não fechar o admin panel ao clicar fora, para evitar perda de dados
         }
     </script>
 </body>
 </html>
-
-
-
