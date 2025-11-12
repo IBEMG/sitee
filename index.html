@@ -192,9 +192,16 @@
         
         /* Cultos Fixos */
         .fixed-cults {
-            background: #e9f5ff;
-            padding: 4rem 2rem;
-        }
+    /* Força a largura total da tela */
+    width: 100vw; 
+    position: relative; 
+    left: 50%;
+    margin-left: -50vw;
+    
+    /* Configuração de fundo e padding */
+    background: #e9f5ff; /* O fundo azul claro original */
+    padding: 4rem 2rem; /* Mantém o padding interno para telas pequenas */
+}
 
         .cult-grid {
             display: flex;
@@ -949,6 +956,7 @@
     </script>
 </body>
 </html>
+
 
 
 
