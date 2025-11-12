@@ -13,18 +13,17 @@
         }
 
         body {
-            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(180deg, #0a1a4f, #001f7f, #0033a0);
-            color: white;
-            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
         }
 
         /* Header */
         header {
-            background: linear-gradient(to right, #ffffff 0%, #ffffff 40%, #0d1b8c 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #2980b9 100%);
             padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -44,23 +43,21 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            text-decoration: none;
+            cursor: pointer;
         }
 
         .logo-img {
-            height: 60px;
-            width: auto;
+            height: 70px;
+            width: 70px;
             object-fit: contain;
         }
 
         .logo-text {
             font-size: 1.3rem;
-            font-weight: 700;
-            color: #0d1b8c;
-            white-space: nowrap;
+            font-weight: 600;
+            color: #1e5a8e;
         }
 
-        /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -73,7 +70,7 @@
         .menu-toggle span {
             width: 30px;
             height: 3px;
-            background: #0d1b8c;
+            background: #1e5a8e;
             border-radius: 3px;
             transition: 0.3s;
         }
@@ -81,37 +78,32 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
-            margin: 0;
+            gap: 3rem;
         }
 
-        nav ul li a {
-            color: #ffffff;
+        nav a {
+            color: #1e5a8e;
             text-decoration: none;
+            transition: color 0.3s;
             font-weight: 500;
             font-size: 1.05rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
         }
 
-        nav ul li a:hover {
-            color: #4da3ff;
-            background: rgba(255, 255, 255, 0.1);
+        nav a:hover {
+            color: #2980b9;
         }
 
         /* Hero Section */
         .hero {
             margin-top: 90px;
-            min-height: 600px;
-            background: linear-gradient(135deg, rgba(26, 35, 126, 0.95), rgba(63, 81, 181, 0.9)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a237e" width="1200" height="600"/><path fill="%233f51b5" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            height: 600px;
+            background: linear-gradient(135deg, rgba(30, 90, 142, 0.95), rgba(41, 128, 185, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e5a8e" width="1200" height="600"/><path fill="%232980b9" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
         .hero-content {
@@ -119,27 +111,17 @@
             color: white;
             max-width: 900px;
             padding: 2rem;
-            animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
             font-size: 1.4rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -155,25 +137,12 @@
         }
 
         .btn-primary {
-            background: #ff6f00;
+            background: #2980b9;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #e65100;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #1a237e;
+            background: #1e5a8e;
             transform: translateY(-3px);
         }
 
@@ -183,174 +152,12 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
-            background: #f8f9fa;
         }
 
         .welcome h2 {
             font-size: 2.5rem;
-            color: #1a237e;
+            color: #1e5a8e;
             margin-bottom: 1.5rem;
-        }
-
-        .welcome p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        /* Cards Section */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #ffffff;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            padding: 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #ff6f00;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.3);
-        }
-
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-        }
-
-        .card-icon svg {
-            width: 40px;
-            height: 40px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .card h3 {
-            font-size: 1.6rem;
-            color: #1a237e;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* Featured Project */
-        .featured-project {
-            background: linear-gradient(135deg, #ff6f00 0%, #f57c00 100%);
-            padding: 5rem 2rem;
-            margin: 3rem 0;
-        }
-
-        .featured-project .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .project-image svg {
-            width: 120px;
-            height: 120px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .project-content h2 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            color: #ecf0f1;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-content p {
-            font-size: 1.1rem;
-            color: #ffffff;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .project-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .highlight-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
-        .highlight-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .highlight-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
         }
 
         /* Events Section */
@@ -363,7 +170,7 @@
 
         .events h2 {
             font-size: 2.5rem;
-            color: #1a237e;
+            color: #1e5a8e;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -379,33 +186,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border-left: 4px solid #ff6f00;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(63, 81, 181, 0.3);
-        }
-
-        .event-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .event-image svg {
-            width: 60px;
-            height: 60px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            border-left: 4px solid #2980b9;
         }
 
         .event-content {
@@ -414,409 +195,183 @@
 
         .event-content h3 {
             font-size: 1.5rem;
-            color: #1a237e;
+            color: #1e5a8e;
             margin-bottom: 0.8rem;
         }
 
         .event-date {
-            color: #ff6f00;
+            color: #2980b9;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
         }
 
-        .event-date svg {
-            width: 18px;
-            height: 18px;
-            stroke: #ff6f00;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
         }
 
-        .event-time {
-            color: #3f51b5;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .event-time svg {
-            width: 16px;
-            height: 16px;
-            stroke: #3f51b5;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .event-location {
-            color: #7f8c8d;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .event-location svg {
-            width: 16px;
-            height: 16px;
-            stroke: #7f8c8d;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .event-content p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .loading::after {
-            content: '...';
-            animation: dots 1.5s steps(4, end) infinite;
-        }
-
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60%, 100% { content: '...'; }
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #1a237e, #283593);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-icon svg {
-            width: 30px;
-            height: 30px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* Footer */
-        footer {
-            background: #0d1b8c;
-            color: white;
-            text-align: center;
+        .modal-content {
+            background: white;
+            margin: 5% auto;
             padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        .modal-content h2 {
+            color: #1e5a8e;
             margin-bottom: 1.5rem;
         }
 
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-            cursor: pointer;
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2980b9;
+        }
+
+        .btn-close {
+            background: #dc3545;
             color: white;
-            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 1rem;
         }
 
-        .social-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .social-icon:hover {
-            background: #ff6f00;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 70px;
-            height: 70px;
-            background: #25d366;
-            border-radius: 50%;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            overflow-y: auto;
+        }
+
+        .admin-content {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 1200px;
+            border-radius: 15px;
+        }
+
+        .admin-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .admin-header h2 {
+            color: #1e5a8e;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-day {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
             cursor: pointer;
-            transition: transform 0.3s;
-            z-index: 999;
-            text-decoration: none;
+            border: 2px solid transparent;
         }
 
-        .whatsapp-btn svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
+        .calendar-day:hover {
+            border-color: #2980b9;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
+        .calendar-day.selected {
+            background: #2980b9;
+            color: white;
         }
 
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            nav {
-                padding: 0 1.5rem;
-            }
+        .event-form {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
 
-            .logo-text {
-                font-size: 1rem;
-            }
+        .event-list {
+            margin-top: 2rem;
+        }
 
-            .logo-img {
-                height: 50px;
-            }
+        .event-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #2980b9;
+        }
 
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 90px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 90px);
-                background: #0d1b8c;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: left 0.3s;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            }
-
-            nav ul.active {
-                left: 0;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 1rem;
-                font-size: 1.2rem;
-                color: white;
-            }
-
-            nav ul li a:hover {
-                background: rgba(255, 255, 255, 0.2);
-            }
-
-            .featured-project .container {
-                grid-template-columns: 1fr;
-            }
-
-            .project-image {
-                height: 300px;
-            }
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
-            .hero {
-                height: auto;
-                min-height: 500px;
-                padding: 2rem 1rem;
-            }
-
             .hero h1 {
                 font-size: 2rem;
             }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn {
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
-            }
-
-            .welcome {
-                padding: 3rem 1.5rem;
-            }
-
-            .welcome h2 {
-                font-size: 2rem;
-            }
-
-            .welcome p {
-                font-size: 1rem;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-                padding: 3rem 1.5rem;
-                gap: 1.5rem;
-            }
-
-            .card {
-                padding: 2rem;
-            }
-
-            .project-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .events {
-                padding: 3rem 1.5rem;
-            }
-
-            .events h2 {
-                font-size: 2rem;
-            }
-
+            
             .event-grid {
                 grid-template-columns: 1fr;
             }
-
-            .contact {
-                padding: 3rem 1.5rem;
-            }
-
-            .contact h2 {
-                font-size: 2rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .whatsapp-btn {
-                width: 60px;
-                height: 60px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .whatsapp-btn svg {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-text {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .project-content h2 {
-                font-size: 2rem;
-            }
-
-            .project-content h3 {
-                font-size: 1.3rem;
+            
+            .calendar {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">
+            <div class="logo" onclick="checkPassword()">
                 <img src="logo.png" alt="IBE Logo" class="logo-img" onerror="this.style.display='none'">
                 <span class="logo-text">Igreja Batista Emanuel</span>
             </div>
@@ -826,241 +381,192 @@
                 <span></span>
             </div>
             <ul id="nav-menu">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
-                <li><a href="#ministerios" onclick="closeMenu()">Ministérios</a></li>
-                <li><a href="#eventos" onclick="closeMenu()">Eventos</a></li>
-                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Bem-vindo à Igreja Batista Emanuel</h1>
             <p>DEUS CONOSCO - Uma comunidade de fé, esperança e amor em Monte Gordo</p>
-            <div class="cta-buttons">
-                <a href="#eventos" class="btn btn-primary">Próximos Eventos</a>
-                <a href="#contato" class="btn btn-secondary">Visite-nos</a>
-            </div>
+            <a href="#eventos" class="btn btn-primary">Próximos Eventos</a>
         </div>
     </section>
 
-    <!-- Welcome Section -->
     <section class="welcome" id="sobre">
         <h2>Sobre Nós</h2>
-        <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor à nossa comunidade.</p>
+        <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor.</p>
     </section>
 
-    <!-- Cards Section -->
-    <section class="cards" id="ministerios">
-        <div class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            </div>
-            <h3>Culto de Oração</h3>
-            <p>Quarta-feira às 19h30<br>Momento de intercessão e comunhão com Deus</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>Escola Dominical</h3>
-            <p>Domingo às 9h<br>Estudo bíblico para todas as idades</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            </div>
-            <h3>Culto de Louvor</h3>
-            <p>Domingo às 19h<br>Adoração e Palavra de Deus</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Ministério Infantil</h3>
-            <p>Ensinando as crianças sobre o amor de Deus de forma lúdica e educativa</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <h3>Ação Social</h3>
-            <p>Levando o amor de Cristo através de ações práticas na comunidade</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            </div>
-            <h3>Ministério de Louvor</h3>
-            <p>Grupo de louvor que conduz a igreja em adoração sincera a Deus</p>
-        </div>
-    </section>
-
-    <!-- Featured Project -->
-    <section class="featured-project">
-        <div class="container">
-            <div class="project-image">
-                <svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-            </div>
-            <div class="project-content">
-                <h2>Sonho de Criança</h2>
-                <h3>Celebração Infantil</h3>
-                <p>Um projeto especial da Igreja Batista Emanuel dedicado a levar alegria, amor e esperança para as crianças da nossa comunidade.</p>
-                <p>Através do Sonho de Criança, realizamos celebrações infantis que transformam vidas, ensinando valores cristãos de forma lúdica e criando memórias inesquecíveis para as crianças e suas famílias.</p>
-                
-                <div class="project-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                        </div>
-                        <span><strong>Ensino Bíblico</strong></span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <svg viewBox="0 0 24 24"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
-                        </div>
-                        <span><strong>Atividades Criativas</strong></span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        </div>
-                        <span><strong>Amor & Doação</strong></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Events Section -->
     <section class="events" id="eventos">
         <h2>Próximos Eventos</h2>
         <div id="events-container" class="event-grid">
-            <div class="loading">Carregando eventos</div>
+            <p style="text-align: center;">Carregando eventos...</p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contato">
-        <h2>Entre em Contato</h2>
-        <p>Venha nos visitar! Estamos de braços abertos para recebê-lo.</p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <strong>Endereço</strong>
-                <p>Monte Gordo<br>Camaçari - BA</p>
+    <!-- Modal de Senha -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h2>Acesso Administrativo</h2>
+            <div class="form-group">
+                <label>Senha:</label>
+                <input type="password" id="passwordInput" placeholder="Digite a senha">
             </div>
-            
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <strong>Telefone</strong>
-                <p><a href="tel:+5571999069264">(71) 99906-9264</a></p>
+            <button class="btn btn-primary" onclick="validatePassword()">Entrar</button>
+            <button class="btn-close" onclick="closePasswordModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Painel Admin -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>Gerenciar Eventos</h2>
+                <button class="btn-close" onclick="closeAdmin()">Fechar</button>
             </div>
-            
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+
+            <div class="event-form">
+                <h3>Adicionar Novo Evento</h3>
+                <div class="form-group">
+                    <label>Data:</label>
+                    <input type="date" id="eventDate">
                 </div>
-                <strong>Email</strong>
-                <p><a href="mailto:contato@ibeemanuel.com.br">contato@ibeemanuel.com.br</a></p>
+                <div class="form-group">
+                    <label>Hora:</label>
+                    <input type="time" id="eventTime">
+                </div>
+                <div class="form-group">
+                    <label>Nome do Evento:</label>
+                    <input type="text" id="eventName" placeholder="Ex: Culto de Louvor">
+                </div>
+                <div class="form-group">
+                    <label>Descrição:</label>
+                    <input type="text" id="eventDesc" placeholder="Descrição do evento">
+                </div>
+                <div class="form-group">
+                    <label>Local:</label>
+                    <input type="text" id="eventLocal" placeholder="Ex: Igreja Central">
+                </div>
+                <button class="btn btn-primary" onclick="addEvent()">Adicionar Evento</button>
+            </div>
+
+            <div class="event-list">
+                <h3>Eventos Cadastrados</h3>
+                <div id="adminEventsList"></div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="https://facebook.com/ibeemanuel" class="social-icon" aria-label="Facebook" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="https://instagram.com/ibeemanuel" class="social-icon" aria-label="Instagram" target="_blank">
-                <svg viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            </a>
-            <a href="https://youtube.com/@ibeemanuel" class="social-icon" aria-label="YouTube" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-            </a>
-        </div>
-        <p>&copy; 2025 Igreja Batista Emanuel - Monte Gordo. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5571992801895" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </a>
+    </div>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
+        let isAdmin = false;
+
+        // Verificar senha
+        function checkPassword() {
+            document.getElementById('passwordModal').style.display = 'block';
         }
 
-        function closeMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.remove('active');
-        }
-
-        // Eventos da igreja
-        const eventos = [
-            {
-                data: "13/11/2025",
-                hora: "19:30",
-                evento: "Culto de Oração",
-                descricao: "Momento de intercessão e comunhão com Deus através da oração",
-                local: "Igreja Batista Emanuel",
-                imagem: ""
-            },
-            {
-                data: "17/11/2025",
-                hora: "09:00",
-                evento: "Escola Dominical",
-                descricao: "Estudo bíblico para todas as idades com classes divididas por faixa etária",
-                local: "Igreja Batista Emanuel",
-                imagem: ""
-            },
-            {
-                data: "17/11/2025",
-                hora: "19:00",
-                evento: "Culto de Louvor",
-                descricao: "Culto de adoração e pregação da Palavra de Deus",
-                local: "Igreja Batista Emanuel",
-                imagem: ""
-            },
-            {
-                data: "20/11/2025",
-                hora: "19:30",
-                evento: "Culto de Oração",
-                descricao: "Momento de intercessão e comunhão com Deus através da oração",
-                local: "Igreja Batista Emanuel",
-                imagem: ""
-            },
-            {
-                data: "24/11/2025",
-                hora: "09:00",
-                evento: "Escola Dominical",
-                descricao: "Estudo bíblico para todas as idades com classes divididas por faixa etária",
-                local: "Igreja Batista Emanuel",
-                imagem: ""
-            },
-            {
-                data: "24/11/2025",
-                hora: "19:00",
-                evento: "Culto de Louvor",
-                descricao: "Culto de adoração e pregação da Palavra de Deus",
-                local: "Igreja Batista Emanuel",
-                imagem: ""
+        function validatePassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'IBEMG2002') {
+                isAdmin = true;
+                closePasswordModal();
+                openAdmin();
+            } else {
+                alert('Senha incorreta!');
             }
-        ];
+        }
 
-        // Função para formatar data
+        function closePasswordModal() {
+            document.getElementById('passwordModal').style.display = 'none';
+            document.getElementById('passwordInput').value = '';
+        }
+
+        function openAdmin() {
+            document.getElementById('adminPanel').style.display = 'block';
+            loadAdminEvents();
+        }
+
+        function closeAdmin() {
+            document.getElementById('adminPanel').style.display = 'none';
+            isAdmin = false;
+        }
+
+        // Adicionar evento
+        async function addEvent() {
+            const date = document.getElementById('eventDate').value;
+            const time = document.getElementById('eventTime').value;
+            const name = document.getElementById('eventName').value;
+            const desc = document.getElementById('eventDesc').value;
+            const local = document.getElementById('eventLocal').value;
+
+            if (!date || !time || !name) {
+                alert('Preencha os campos obrigatórios!');
+                return;
+            }
+
+            const evento = {
+                id: Date.now(),
+                data: date.split('-').reverse().join('/'),
+                hora: time,
+                evento: name,
+                descricao: desc,
+                local: local
+            };
+
+            try {
+                const eventos = await getEvents();
+                eventos.push(evento);
+                await window.storage.set('ibe-eventos', JSON.stringify(eventos), false);
+                
+                document.getElementById('eventDate').value = '';
+                document.getElementById('eventTime').value = '';
+                document.getElementById('eventName').value = '';
+                document.getElementById('eventDesc').value = '';
+                document.getElementById('eventLocal').value = '';
+                
+                loadAdminEvents();
+                loadPublicEvents();
+                alert('Evento adicionado com sucesso!');
+            } catch (error) {
+                console.error('Erro ao adicionar evento:', error);
+                alert('Erro ao adicionar evento');
+            }
+        }
+
+        // Deletar evento
+        async function deleteEvent(id) {
+            if (!confirm('Deseja realmente excluir este evento?')) return;
+
+            try {
+                const eventos = await getEvents();
+                const novosEventos = eventos.filter(e => e.id !== id);
+                await window.storage.set('ibe-eventos', JSON.stringify(novosEventos), false);
+                
+                loadAdminEvents();
+                loadPublicEvents();
+                alert('Evento excluído com sucesso!');
+            } catch (error) {
+                console.error('Erro ao deletar evento:', error);
+                alert('Erro ao deletar evento');
+            }
+        }
+
+        // Buscar eventos
+        async function getEvents() {
+            try {
+                const result = await window.storage.get('ibe-eventos', false);
+                return result ? JSON.parse(result.value) : [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        // Formatar data
         function formatarData(dataStr) {
             const partes = dataStr.split('/');
             const data = new Date(partes[2], partes[1] - 1, partes[0]);
@@ -1068,95 +574,85 @@
             return data.toLocaleDateString('pt-BR', opcoes);
         }
 
-        // Função para obter ícone do evento
-        function getEventIcon(evento) {
-            const tipo = evento.toLowerCase();
-            if (tipo.includes('louvor') || tipo.includes('culto')) {
-                return '<svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>';
-            } else if (tipo.includes('oração')) {
-                return '<svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-            } else if (tipo.includes('escola')) {
-                return '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>';
-            }
-            return '<svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>';
-        }
-
-        // Ordenar eventos por data
-        eventos.sort((a, b) => {
-            const dataA = a.data.split('/').reverse().join('');
-            const dataB = b.data.split('/').reverse().join('');
-            return dataA.localeCompare(dataB);
-        });
-
-        // Renderizar eventos
-        function renderizarEventos() {
+        // Carregar eventos públicos (próximos 6)
+        async function loadPublicEvents() {
             const container = document.getElementById('events-container');
+            const eventos = await getEvents();
             
-            if (eventos.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #666;">Nenhum evento programado no momento.</p>';
+            const hoje = new Date();
+            hoje.setHours(0, 0, 0, 0);
+            
+            const eventosFuturos = eventos
+                .filter(e => {
+                    const partes = e.data.split('/');
+                    const dataEvento = new Date(partes[2], partes[1] - 1, partes[0]);
+                    dataEvento.setHours(0, 0, 0, 0);
+                    return dataEvento >= hoje;
+                })
+                .sort((a, b) => {
+                    const dataA = a.data.split('/').reverse().join('');
+                    const dataB = b.data.split('/').reverse().join('');
+                    return dataA.localeCompare(dataB);
+                })
+                .slice(0, 6);
+
+            if (eventosFuturos.length === 0) {
+                container.innerHTML = '<p style="text-align: center;">Nenhum evento programado.</p>';
                 return;
             }
 
-            container.innerHTML = eventos.map(evento => `
+            container.innerHTML = eventosFuturos.map(evento => `
                 <div class="event-card">
-                    <div class="event-image">
-                        ${evento.imagem ? `<img src="${evento.imagem}" alt="${evento.evento}">` : getEventIcon(evento.evento)}
-                    </div>
                     <div class="event-content">
                         <h3>${evento.evento}</h3>
-                        <div class="event-date">
-                            <svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                            ${formatarData(evento.data)}
-                        </div>
-                        <div class="event-time">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            ${evento.hora}
-                        </div>
-                        <div class="event-location">
-                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            ${evento.local}
-                        </div>
+                        <p class="event-date">📅 ${formatarData(evento.data)}</p>
+                        <p class="event-date">🕐 ${evento.hora}</p>
+                        <p class="event-date">📍 ${evento.local}</p>
                         <p>${evento.descricao}</p>
                     </div>
                 </div>
             `).join('');
         }
 
-        // Carregar eventos quando a página carregar
-        window.addEventListener('load', function() {
-            setTimeout(renderizarEventos, 500);
-        });
-
-        // Smooth scroll para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fechar menu ao clicar fora
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('nav-menu');
-            const menuToggle = document.querySelector('.menu-toggle');
+        // Carregar eventos no admin
+        async function loadAdminEvents() {
+            const container = document.getElementById('adminEventsList');
+            const eventos = await getEvents();
             
-            if (menu.classList.contains('active') && 
-                !menu.contains(event.target) && 
-                !menuToggle.contains(event.target)) {
-                closeMenu();
+            const eventosOrdenados = eventos.sort((a, b) => {
+                const dataA = a.data.split('/').reverse().join('');
+                const dataB = b.data.split('/').reverse().join('');
+                return dataA.localeCompare(dataB);
+            });
+
+            if (eventosOrdenados.length === 0) {
+                container.innerHTML = '<p>Nenhum evento cadastrado.</p>';
+                return;
             }
+
+            container.innerHTML = eventosOrdenados.map(evento => `
+                <div class="event-item">
+                    <div>
+                        <strong>${evento.evento}</strong><br>
+                        ${evento.data} às ${evento.hora} - ${evento.local}
+                    </div>
+                    <button class="btn-delete" onclick="deleteEvent(${evento.id})">Excluir</button>
+                </div>
+            `).join('');
+        }
+
+        // Inicializar
+        window.addEventListener('load', () => {
+            loadPublicEvents();
         });
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('passwordModal');
+            if (event.target == modal) {
+                closePasswordModal();
+            }
+        }
     </script>
 </body>
-</html><div class="highlight-icon">
-                            <svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                        </div>
-                        <span><strong>Festas & Celebrações</strong></span>
-                    </div>
-                    <div class="highlight-item">
+</html>
