@@ -464,6 +464,58 @@
 
     <script>
         let isAdmin = false;
+        
+        // Eventos iniciais padrão
+        const eventosIniciais = [
+            {
+                id: 1,
+                data: "13/11/2025",
+                hora: "17:00",
+                evento: "Culto de Oração",
+                descricao: "Momento de intercessão e comunhão com Deus",
+                local: "Igreja Batista Emanuel"
+            },
+            {
+                id: 2,
+                data: "17/11/2025",
+                hora: "09:00",
+                evento: "Escola Dominical",
+                descricao: "Estudo bíblico para todas as idades",
+                local: "Igreja Batista Emanuel"
+            },
+            {
+                id: 3,
+                data: "17/11/2025",
+                hora: "19:00",
+                evento: "Culto de Louvor",
+                descricao: "Adoração e Palavra de Deus",
+                local: "Igreja Batista Emanuel"
+            },
+            {
+                id: 4,
+                data: "20/11/2025",
+                hora: "17:00",
+                evento: "Culto de Oração",
+                descricao: "Momento de intercessão e comunhão com Deus",
+                local: "Igreja Batista Emanuel"
+            },
+            {
+                id: 5,
+                data: "24/11/2025",
+                hora: "09:00",
+                evento: "Escola Dominical",
+                descricao: "Estudo bíblico para todas as idades",
+                local: "Igreja Batista Emanuel"
+            },
+            {
+                id: 6,
+                data: "24/11/2025",
+                hora: "19:00",
+                evento: "Culto de Louvor",
+                descricao: "Adoração e Palavra de Deus",
+                local: "Igreja Batista Emanuel"
+            }
+        ];
 
         // Verificar senha
         function checkPassword() {
@@ -496,6 +548,31 @@
             isAdmin = false;
         }
 
+        // Buscar eventos (com fallback para eventos iniciais)
+        async function getEvents() {
+            try {
+                const result = await window.storage.get('ibe-eventos', false);
+                if (result && result.value) {
+                    return JSON.parse(result.value);
+                }
+            } catch (error) {
+                console.log('Usando eventos iniciais');
+            }
+            // Se não tem eventos salvos, retorna os iniciais
+            return [...eventosIniciais];
+        }
+
+        // Salvar eventos
+        async function saveEvents(eventos) {
+            try {
+                await window.storage.set('ibe-eventos', JSON.stringify(eventos), false);
+                return true;
+            } catch (error) {
+                console.error('Erro ao salvar:', error);
+                return false;
+            }
+        }
+
         // Adicionar evento
         async function addEvent() {
             const date = document.getElementById('eventDate').value;
@@ -505,7 +582,7 @@
             const local = document.getElementById('eventLocal').value;
 
             if (!date || !time || !name) {
-                alert('Preencha os campos obrigatórios!');
+                alert('Preencha data, hora e nome do evento!');
                 return;
             }
 
@@ -514,55 +591,48 @@
                 data: date.split('-').reverse().join('/'),
                 hora: time,
                 evento: name,
-                descricao: desc,
-                local: local
+                descricao: desc || 'Sem descrição',
+                local: local || 'A definir'
             };
 
-            try {
-                const eventos = await getEvents();
-                eventos.push(evento);
-                await window.storage.set('ibe-eventos', JSON.stringify(eventos), false);
-                
+            const eventos = await getEvents();
+            eventos.push(evento);
+            
+            const salvou = await saveEvents(eventos);
+            
+            if (salvou) {
+                // Limpar campos
                 document.getElementById('eventDate').value = '';
                 document.getElementById('eventTime').value = '';
                 document.getElementById('eventName').value = '';
                 document.getElementById('eventDesc').value = '';
                 document.getElementById('eventLocal').value = '';
                 
-                loadAdminEvents();
-                loadPublicEvents();
-                alert('Evento adicionado com sucesso!');
-            } catch (error) {
-                console.error('Erro ao adicionar evento:', error);
-                alert('Erro ao adicionar evento');
+                // Atualizar ambas as listas
+                await loadAdminEvents();
+                await loadPublicEvents();
+                
+                alert('✅ Evento adicionado com sucesso!');
+            } else {
+                alert('❌ Erro ao adicionar evento. Tente novamente.');
             }
         }
 
         // Deletar evento
         async function deleteEvent(id) {
-            if (!confirm('Deseja realmente excluir este evento?')) return;
+            if (!confirm('❓ Deseja realmente excluir este evento?')) return;
 
-            try {
-                const eventos = await getEvents();
-                const novosEventos = eventos.filter(e => e.id !== id);
-                await window.storage.set('ibe-eventos', JSON.stringify(novosEventos), false);
-                
-                loadAdminEvents();
-                loadPublicEvents();
-                alert('Evento excluído com sucesso!');
-            } catch (error) {
-                console.error('Erro ao deletar evento:', error);
-                alert('Erro ao deletar evento');
-            }
-        }
-
-        // Buscar eventos
-        async function getEvents() {
-            try {
-                const result = await window.storage.get('ibe-eventos', false);
-                return result ? JSON.parse(result.value) : [];
-            } catch (error) {
-                return [];
+            const eventos = await getEvents();
+            const novosEventos = eventos.filter(e => e.id !== id);
+            
+            const salvou = await saveEvents(novosEventos);
+            
+            if (salvou) {
+                await loadAdminEvents();
+                await loadPublicEvents();
+                alert('✅ Evento excluído com sucesso!');
+            } else {
+                alert('❌ Erro ao excluir evento. Tente novamente.');
             }
         }
 
@@ -577,6 +647,8 @@
         // Carregar eventos públicos (próximos 6)
         async function loadPublicEvents() {
             const container = document.getElementById('events-container');
+            container.innerHTML = '<p style="text-align: center;">Carregando eventos...</p>';
+            
             const eventos = await getEvents();
             
             const hoje = new Date();
@@ -597,7 +669,7 @@
                 .slice(0, 6);
 
             if (eventosFuturos.length === 0) {
-                container.innerHTML = '<p style="text-align: center;">Nenhum evento programado.</p>';
+                container.innerHTML = '<p style="text-align: center; padding: 2rem;">Nenhum evento programado no momento.</p>';
                 return;
             }
 
@@ -617,16 +689,18 @@
         // Carregar eventos no admin
         async function loadAdminEvents() {
             const container = document.getElementById('adminEventsList');
+            container.innerHTML = '<p>Carregando...</p>';
+            
             const eventos = await getEvents();
             
             const eventosOrdenados = eventos.sort((a, b) => {
-                const dataA = a.data.split('/').reverse().join('');
-                const dataB = b.data.split('/').reverse().join('');
+                const dataA = a.data.split('/').reverse().join('') + a.hora.replace(':', '');
+                const dataB = b.data.split('/').reverse().join('') + b.hora.replace(':', '');
                 return dataA.localeCompare(dataB);
             });
 
             if (eventosOrdenados.length === 0) {
-                container.innerHTML = '<p>Nenhum evento cadastrado.</p>';
+                container.innerHTML = '<p style="padding: 1rem;">Nenhum evento cadastrado.</p>';
                 return;
             }
 
@@ -634,16 +708,19 @@
                 <div class="event-item">
                     <div>
                         <strong>${evento.evento}</strong><br>
-                        ${evento.data} às ${evento.hora} - ${evento.local}
+                        📅 ${evento.data} às ${evento.hora}<br>
+                        📍 ${evento.local}<br>
+                        📝 ${evento.descricao}
                     </div>
-                    <button class="btn-delete" onclick="deleteEvent(${evento.id})">Excluir</button>
+                    <button class="btn-delete" onclick="deleteEvent(${evento.id})">🗑️ Excluir</button>
                 </div>
             `).join('');
         }
 
-        // Inicializar
-        window.addEventListener('load', () => {
-            loadPublicEvents();
+        // Inicializar quando a página carregar
+        window.addEventListener('load', async () => {
+            // Carregar eventos públicos
+            await loadPublicEvents();
         });
 
         // Fechar modal ao clicar fora
