@@ -28,7 +28,8 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #2980b9 100%);
+            /* Fundo forte para dar contraste ao texto BRANCO */
+            background: linear-gradient(135deg, #1e5a8e 0%, #2980b9 100%); 
             padding: 1.5rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
@@ -62,7 +63,7 @@
         .logo-text {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #1e5a8e;
+            color: white; /* Alterado para BRANCO */
         }
         
         /* Menu Toggle (Mobile) */
@@ -78,7 +79,7 @@
         .menu-toggle span {
             width: 30px;
             height: 3px;
-            background: #1e5a8e;
+            background: white; /* Corrigido para BRANCO em contraste com o fundo do header */
             border-radius: 3px;
             transition: 0.3s;
         }
@@ -97,26 +98,13 @@
             transition: color 0.3s;
             font-weight: 500;
             font-size: 1.05rem;
-            
-            /* Adicionado background para contraste do menu em branco */
-            padding: 0.5rem 0.5rem; 
-            border-radius: 5px;
-            background: #2980b9; 
         }
 
         nav a:hover {
-            color: #f8f9fa; /* Corrigido para uma cor clara ao passar o mouse */
-            background: #1e5a8e;
+            color: #f0f0f0; 
         }
         
-        /* Ajuste no fundo do header para melhor visibilidade do texto branco */
-        header {
-            background: linear-gradient(135deg, #1e5a8e 0%, #2980b9 100%); /* Cor forte para contraste */
-            /* ... (outras propriedades mantidas) ... */
-        }
-
-
-        /* Hero Section */
+        /* Hero Section (Mantido) */
         .hero {
             height: 600px;
             background: linear-gradient(135deg, rgba(30, 90, 142, 0.95), rgba(41, 128, 185, 0.9)), 
@@ -128,6 +116,46 @@
             justify-content: center;
         }
         
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #2980b9;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e5a8e;
+            transform: translateY(-3px);
+        }
+
         /* Seções de Conteúdo */
         .content-section {
             padding: 5rem 2rem;
@@ -142,13 +170,13 @@
             margin-bottom: 1.5rem;
         }
         
-        /* Programação Fixa (Abordagem Neutra) */
-        .fixed-schedule {
+        /* Cultos Fixos / Horários de Cultos */
+        .fixed-cults {
             background: #e9f5ff; 
             padding: 4rem 2rem;
         }
 
-        .schedule-grid {
+        .cult-grid {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
@@ -156,7 +184,7 @@
             margin-top: 2rem;
         }
 
-        .schedule-card {
+        .cult-card {
             background: white;
             padding: 1.5rem;
             border-radius: 10px;
@@ -166,18 +194,42 @@
             border-top: 5px solid #2980b9;
         }
 
-        .schedule-card h3 {
+        .cult-card h3 {
             color: #1e5a8e;
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
         }
 
-        .schedule-card p {
+        .cult-card p {
             margin: 0.3rem 0;
             color: #555;
         }
+        
+        /* NOVA SEÇÃO: PROJETOS */
+        .projects {
+            background: #f0f8ff; 
+            padding: 6rem 2rem;
+        }
+        .project-card {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 3rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .project-card h3 {
+            color: #e67e22; /* Destaque para o nome do projeto */
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .project-card p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
 
-        /* Events Section */
+        /* Events Section (Mantido) */
         .events {
             background: #f8f9fa;
         }
@@ -211,7 +263,7 @@
             color: white;
         }
 
-        /* WhatsApp Floating Button */
+        /* WhatsApp Floating Button (Mantido) */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -235,7 +287,7 @@
             background-color: #128c7e;
         }
 
-        /* Media Queries (Mantidas e Aprimoradas) */
+        /* Media Queries (Mantidas) */
         @media (max-width: 768px) {
             nav {
                 padding: 0 1.5rem;
@@ -262,15 +314,18 @@
                 text-align: center;
             }
             
-            nav a {
-                background: none; /* Remove background do link no menu mobile */
+            .menu-toggle span {
+                background: white; /* Certifica que o ícone do menu é branco */
             }
 
             .menu-toggle {
                 display: flex;
             }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
-        /* ... (Outros estilos de modal/admin panel mantidos) ... */
     </style>
 </head>
 <body>
@@ -278,7 +333,7 @@
         <nav>
             <div class="logo" onclick="checkPassword()">
                 <img src="logo.png" alt="IBE Logo" class="logo-img" onerror="this.style.display='none'">
-                <span class="logo-text" style="color: white;">Igreja Batista Emanuel</span>
+                <span class="logo-text">Igreja Batista Emanuel</span>
             </div>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
@@ -288,8 +343,9 @@
             <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#programacao">Programação Semanal</a></li>
-                <li><a href="#eventos">Eventos Especiais</a></li>
+                <li><a href="#horarios">Horários de Cultos</a></li> 
+                <li><a href="#projetos">Projetos</a></li> 
+                <li><a href="#eventos">Eventos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -299,7 +355,7 @@
         <div class="hero-content">
             <h1>Bem-vindo à Igreja Batista Emanuel</h1>
             <p>DEUS CONOSCO - Uma comunidade de fé, esperança e amor em Monte Gordo</p>
-            <a href="#programacao" class="btn btn-primary">Ver Programação</a>
+            <a href="#horarios" class="btn btn-primary">Ver Horários</a>
         </div>
     </section>
 
@@ -308,27 +364,39 @@
         <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor.</p>
     </section>
     
-    <section class="content-section fixed-schedule" id="programacao">
-        <h2>Programação Semanal Fixa</h2>
-        <div class="schedule-grid">
-            <div class="schedule-card">
+    <section class="content-section fixed-cults" id="horarios">
+        <h2>Horários de Cultos Semanais</h2>
+        <div class="cult-grid">
+            <div class="cult-card">
                 <h3>Escola Bíblica Dominical (EBD)</h3>
                 <p><strong>Dia:</strong> Domingo</p>
                 <p><strong>Hora:</strong> 09:00h</p>
-                <p><strong>Detalhe:</strong> Estudo e ensino da Bíblia para todas as idades.</p>
+                <p><strong>Descrição:</strong> Estudo e ensino da Bíblia para todas as idades.</p>
             </div>
-            <div class="schedule-card">
+            <div class="cult-card">
                 <h3>Celebração e Louvor</h3>
                 <p><strong>Dia:</strong> Domingo</p>
                 <p><strong>Hora:</strong> 19:00h</p>
-                <p><strong>Detalhe:</strong> Culto principal com adoração, louvor e ministração da Palavra.</p>
+                <p><strong>Descrição:</strong> Culto principal com adoração, louvor e ministração da Palavra.</p>
             </div>
-            <div class="schedule-card">
+            <div class="cult-card">
                 <h3>Encontro de Oração</h3>
                 <p><strong>Dia:</strong> Quarta-feira</p>
                 <p><strong>Hora:</strong> 19:00h</p>
-                <p><strong>Detalhe:</strong> Momento dedicado à intercessão e estudo bíblico temático.</p>
+                <p><strong>Descrição:</strong> Momento dedicado à intercessão e estudo bíblico temático.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="content-section projects" id="projetos">
+        <h2>Projetos Sociais</h2>
+        <div class="project-card">
+            <h3>Projeto Sonho de Criança</h3>
+            <p>O **Projeto Sonho de Criança** é uma iniciativa da Igreja Batista Emanuel focada em oferecer apoio integral a crianças e adolescentes da comunidade de Monte Gordo.</p>
+            <p>Nosso objetivo é proporcionar um ambiente seguro e acolhedor, com atividades que visam o desenvolvimento educacional, social e espiritual, garantindo um futuro mais promissor para cada participante.</p>
+            <a href="https://www.ibemgsonhodecrianca.com.br/" target="_blank" class="btn btn-primary" style="background: #e67e22;">
+                Acessar o Site do Projeto <i class="fas fa-external-link-alt"></i>
+            </a>
         </div>
     </section>
 
@@ -342,9 +410,9 @@
     <footer id="contato">
         <h2>Entre em Contato</h2>
         <p>📍 Monte Gordo, Camaçari-BA</p>
-        <p>📱 **WhatsApp:** <a href="https://wa.me/5571992801895" target="_blank">(71) 99280-1895</a></p>
-        <p>📞 **Telefone:** <a href="tel:+557191361313">(71) 99136-1313</a></p>
-        <p>📧 **E-mail:** <a href="mailto:contato@ibemg.com.br">contato@ibemg.com.br</a></p>
+        <p>📱 **WhatsApp:** <a href="https://wa.me/5571992801895" target="_blank" style="color: #b3d7ff;">(71) 99280-1895</a></p>
+        <p>📞 **Telefone (Ligação):** <a href="tel:+557191361313" style="color: #b3d7ff;">(71) 99136-1313</a></p>
+        <p>📧 **E-mail:** <a href="mailto:contato@ibemg.com.br" style="color: #b3d7ff;">contato@ibemg.com.br</a></p>
         <p style="margin-top: 1rem;">© 2025 Igreja Batista Emanuel - Todos os direitos reservados.</p>
     </footer>
 
@@ -441,6 +509,7 @@
             document.getElementById('passwordModal').style.display = 'block';
         }
 
+        // IMPLEMENTAÇÃO SWEETALERT2
         async function validatePassword() {
             const password = document.getElementById('passwordInput').value;
             if (password === 'IBEMG2002') {
@@ -499,6 +568,7 @@
             }
         }
 
+        // IMPLEMENTAÇÃO SWEETALERT2
         async function addEvent() {
             const dateInput = document.getElementById('eventDate');
             const timeInput = document.getElementById('eventTime');
@@ -547,6 +617,7 @@
             }
         }
 
+        // IMPLEMENTAÇÃO SWEETALERT2
         async function deleteEvent(id) {
             const result = await Swal.fire({
                 title: 'Confirmar Exclusão',
