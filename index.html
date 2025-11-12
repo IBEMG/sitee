@@ -87,7 +87,7 @@
         }
 
         nav a {
-            color: #1e5a8e;
+            color: #ffffff;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
@@ -267,80 +267,86 @@
         
         /* --- Estilos da Nova Seção Projetos --- */
 
-        .projects {
-            background: #ffffff;
-    padding: 5rem 0;
-    border-bottom: 5px solid #e9f5ff;
-    width: 100vw;       /* força ocupar toda a largura da viewport */
-    position: relative; /* garante alinhamento total */
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw; /* remove eventuais margens automáticas */
-    margin-right: -50vw;
-        }
+        /* --- Estilos da Nova Seção Projetos --- */
 
-        .projects h2 {
-            color: #2980b9;
-        }
+.projects {
+    /* Mantemos as configurações padrão do .content-section */
+    /* Estas propriedades (padding, max-width, margin: 0 auto) 
+       já estão no .content-section, que é a classe pai */
+    
+    background: #ffffff; /* Fundo totalmente branco */
+    padding: 5rem 2rem; /* Adiciona padding vertical e lateral (2rem) */
+    border-bottom: 5px solid #e9f5ff; /* Linha de separação */
+    
+    /* REMOVIDO: 
+       width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; 
+       Essas linhas são desnecessárias se o background é branco e não precisa se estender além do body.
+       Se for usar um background *colorido* de ponta a ponta, avise!
+    */
+}
 
-        .project-card-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
+.projects h2 {
+    color: #2980b9;
+}
 
-        .project-card {
-            background: #f8f9fa;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            max-width: 450px;
-            text-align: center;
-            border-top: 8px solid #1e5a8e;
-            transition: transform 0.3s;
-        }
+.project-card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
+.project-card {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    max-width: 450px;
+    text-align: center;
+    border-top: 8px solid #1e5a8e;
+    transition: transform 0.3s;
+}
 
-        .project-icon {
-            font-size: 3rem;
-            color: #1e5a8e;
-            margin-bottom: 1rem;
-        }
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
 
-        .project-card h3 {
-            font-size: 1.8rem;
-            color: #1e5a8e;
-            margin-bottom: 1.5rem;
-        }
+.project-icon {
+    font-size: 3rem;
+    color: #1e5a8e;
+    margin-bottom: 1rem;
+}
 
-        .project-card p {
-            color: #555;
-            margin-bottom: 1rem;
-        }
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #1e5a8e;
+    margin-bottom: 1.5rem;
+}
 
-        .project-details {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-            text-align: left;
-            border-left: 3px solid #2980b9;
-        }
+.project-card p {
+    color: #555;
+    margin-bottom: 1rem;
+}
 
-        .project-details p {
-            margin: 0.5rem 0;
-            font-size: 0.95rem;
-        }
+.project-details {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+    border-left: 3px solid #2980b9;
+}
 
-        .btn-small {
-            padding: 0.75rem 1.8rem;
-            font-size: 1rem;
-            margin-top: 1rem;
-        }
+.project-details p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.btn-small {
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
 
         /* Footer */
         footer {
@@ -970,5 +976,6 @@
     </script>
 </body>
 </html>
+
 
 
