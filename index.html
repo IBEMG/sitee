@@ -267,26 +267,35 @@
         
         /* --- Estilos da Nova Seção Projetos --- */
 
-        /* --- Estilos da Nova Seção Projetos --- */
+       /* --- Estilos da Nova Seção Projetos --- */
 
 .projects {
-    /* Mantemos as configurações padrão do .content-section */
-    /* Estas propriedades (padding, max-width, margin: 0 auto) 
-       já estão no .content-section, que é a classe pai */
+    /* Força a seção a ocupar toda a largura da tela (Viewport Width) */
+    width: 100vw; 
     
-    background: #ffffff; /* Fundo totalmente branco */
-    padding: 5rem 2rem; /* Adiciona padding vertical e lateral (2rem) */
-    border-bottom: 5px solid #e9f5ff; /* Linha de separação */
+    /* Alinha o centro da seção com o centro da tela */
+    position: relative; 
+    left: 50%;
     
-    /* REMOVIDO: 
-       width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; 
-       Essas linhas são desnecessárias se o background é branco e não precisa se estender além do body.
-       Se for usar um background *colorido* de ponta a ponta, avise!
-    */
+    /* Move a seção para a esquerda pela metade do seu tamanho (100vw) 
+       Isso remove as margens laterais automáticas e garante a largura total */
+    margin-left: -50vw;
+    
+    background: #f8f9fa; /* Defina o fundo cinza claro que está aparecendo na sua imagem */
+    padding: 5rem 0; /* Remove padding lateral, mas mantém o vertical */
+    border-bottom: 5px solid #e9f5ff; /* Mantém a linha de baixo */
+    
+    /* O resto do conteúdo interno (h2, project-card-container) será centralizado
+       pela classe .content-section que a seção projects herda no HTML */
 }
 
+/* O restante do CSS da seção projetos não precisa de alteração */
 .projects h2 {
     color: #2980b9;
+    /* Adicionamos padding lateral aqui para evitar que o título encoste na borda em telas pequenas */
+    padding: 0 1rem; 
+    max-width: 1200px; /* Mantém o título alinhado com o restante do conteúdo */
+    margin: 0 auto 1.5rem auto; /* Centraliza o título */
 }
 
 .project-card-container {
@@ -296,7 +305,7 @@
 }
 
 .project-card {
-    background: #f8f9fa;
+    background: white; /* Card branco para contraste */
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -310,43 +319,7 @@
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-
-.project-icon {
-    font-size: 3rem;
-    color: #1e5a8e;
-    margin-bottom: 1rem;
-}
-
-.project-card h3 {
-    font-size: 1.8rem;
-    color: #1e5a8e;
-    margin-bottom: 1.5rem;
-}
-
-.project-card p {
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.project-details {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background: white;
-    border-radius: 10px;
-    text-align: left;
-    border-left: 3px solid #2980b9;
-}
-
-.project-details p {
-    margin: 0.5rem 0;
-    font-size: 0.95rem;
-}
-
-.btn-small {
-    padding: 0.75rem 1.8rem;
-    font-size: 1rem;
-    margin-top: 1rem;
-}
+/* ... (Mantenha o resto do CSS do projeto como estava) ... */
 
         /* Footer */
         footer {
@@ -976,6 +949,7 @@
     </script>
 </body>
 </html>
+
 
 
 
