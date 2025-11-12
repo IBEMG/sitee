@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igreja Batista Emanuel - Monte Gordo</title>
     <link rel="icon" type="image/png" href="logo.png">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -23,13 +19,13 @@
             line-height: 1.6;
             color: #333;
             background: #ffffff;
-            padding-top: 90px;
+            /* Padding para evitar que o conteúdo fique atrás do header fixo */
+            padding-top: 90px; 
         }
 
         /* Header */
         header {
-            /* Fundo forte para dar contraste ao texto BRANCO */
-            background: linear-gradient(135deg, #1e5a8e 0%, #2980b9 100%); 
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #2980b9 100%);
             padding: 1.5rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
@@ -63,12 +59,12 @@
         .logo-text {
             font-size: 1.3rem;
             font-weight: 600;
-            color: white; /* Alterado para BRANCO */
+            color: #1e5a8e;
         }
         
         /* Menu Toggle (Mobile) */
         .menu-toggle {
-            display: none;
+            display: none; /* Esconde por padrão em desktop */
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
@@ -79,7 +75,7 @@
         .menu-toggle span {
             width: 30px;
             height: 3px;
-            background: white; /* Corrigido para BRANCO em contraste com o fundo do header */
+            background: #1e5a8e;
             border-radius: 3px;
             transition: 0.3s;
         }
@@ -91,9 +87,8 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* Corrigido: Cor do texto do menu para BRANCO */
         nav a {
-            color: white; 
+            color: #1e5a8e;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
@@ -101,11 +96,12 @@
         }
 
         nav a:hover {
-            color: #f0f0f0; 
+            color: #2980b9;
         }
-        
-        /* Hero Section (Mantido) */
+
+        /* Hero Section */
         .hero {
+            /* Removido margin-top: 90px; pois body já tem padding-top */
             height: 600px;
             background: linear-gradient(135deg, rgba(30, 90, 142, 0.95), rgba(41, 128, 185, 0.9)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e5a8e" width="1200" height="600"/><path fill="%232980b9" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
@@ -115,20 +111,20 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .hero-content {
             text-align: center;
             color: white;
             max-width: 900px;
             padding: 2rem;
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
         }
-        
+
         .hero p {
             font-size: 1.4rem;
             margin-bottom: 2rem;
@@ -170,9 +166,9 @@
             margin-bottom: 1.5rem;
         }
         
-        /* Cultos Fixos / Horários de Cultos */
+        /* Cultos Fixos */
         .fixed-cults {
-            background: #e9f5ff; 
+            background: #e9f5ff; /* Fundo mais claro para destaque */
             padding: 4rem 2rem;
         }
 
@@ -204,41 +200,45 @@
             margin: 0.3rem 0;
             color: #555;
         }
-        
-        /* NOVA SEÇÃO: PROJETOS */
-        .projects {
-            background: #f0f8ff; 
-            padding: 6rem 2rem;
-        }
-        .project-card {
-            max-width: 800px;
-            margin: 2rem auto 0;
-            padding: 3rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-        .project-card h3 {
-            color: #e67e22; /* Destaque para o nome do projeto */
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .project-card p {
-            margin-bottom: 1.5rem;
-            color: #555;
-        }
 
-        /* Events Section (Mantido) */
+        /* Events Section */
         .events {
             background: #f8f9fa;
         }
 
+        .events h2 {
+            margin-bottom: 3rem;
+        }
+
         .event-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Reduzido o minmax para melhor ajuste móvel */
             gap: 2rem;
-            text-align: left;
+            text-align: left; /* Alinhamento do texto da grid de volta para esquerda */
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #2980b9;
+        }
+
+        .event-content {
+            padding: 2rem;
+        }
+
+        .event-content h3 {
+            font-size: 1.5rem;
+            color: #1e5a8e;
+            margin-bottom: 0.8rem;
+        }
+
+        .event-date {
+            color: #2980b9;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
         
         /* Footer */
@@ -252,18 +252,8 @@
         footer p {
             margin: 0.5rem 0;
         }
-        
-        footer a {
-            color: #b3d7ff; /* Cor clara para links no footer */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: white;
-        }
 
-        /* WhatsApp Floating Button (Mantido) */
+        /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -287,43 +277,96 @@
             background-color: #128c7e;
         }
 
-        /* Media Queries (Mantidas) */
+        /* Modal (Estilos mantidos, apenas para referência) */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        .modal-content { background: white; margin: 5% auto; padding: 2rem; border-radius: 15px; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .modal-content h2 { color: #1e5a8e; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: #333; font-weight: 500; }
+        .form-group input { width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .form-group input:focus { outline: none; border-color: #2980b9; }
+        .btn-close { background: #dc3545; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; margin-left: 1rem; }
+        .admin-panel { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
+        .admin-content { background: white; margin: 2rem auto; padding: 2rem; max-width: 90%; border-radius: 15px; } /* Ajuste no max-width */
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        .admin-header h2 { color: #1e5a8e; }
+        .event-form { background: #f8f9fa; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; }
+        .event-list { margin-top: 2rem; }
+        .event-item { background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #2980b9; }
+        .btn-delete { background: #dc3545; color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer; }
+
+        /* Media Queries para Layout Responsivo (Celulares) */
         @media (max-width: 768px) {
             nav {
-                padding: 0 1.5rem;
+                padding: 0 1.5rem; /* Reduzido padding */
             }
             
             nav ul {
+                /* Configuração inicial do menu mobile */
                 position: absolute;
-                top: 100px;
+                top: 100px; /* Abaixo do header */
                 right: 0;
                 flex-direction: column;
                 width: 100%;
-                background: #1e5a8e; /* Fundo azul para menu mobile */
+                background: #f8f9fa;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
                 padding: 1rem 0;
-                display: none;
+                display: none; /* Escondido por padrão */
             }
 
             nav ul.open {
-                display: flex;
+                display: flex; /* Exibe quando a classe 'open' é adicionada */
             }
-            
+
             nav ul li {
                 padding: 0.5rem 3rem;
                 text-align: center;
             }
-            
-            .menu-toggle span {
-                background: white; /* Certifica que o ícone do menu é branco */
-            }
 
             .menu-toggle {
-                display: flex;
+                display: flex; /* Exibe o ícone de menu em mobile */
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Ajuste para caber melhor */
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .admin-content {
+                margin: 1rem auto;
+                padding: 1rem;
+            }
+            
+            .admin-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
             }
         }
     </style>
@@ -343,8 +386,7 @@
             <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#horarios">Horários de Cultos</a></li> 
-                <li><a href="#projetos">Projetos</a></li> 
+                <li><a href="#cultos">Cultos Fixos</a></li>
                 <li><a href="#eventos">Eventos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -355,7 +397,7 @@
         <div class="hero-content">
             <h1>Bem-vindo à Igreja Batista Emanuel</h1>
             <p>DEUS CONOSCO - Uma comunidade de fé, esperança e amor em Monte Gordo</p>
-            <a href="#horarios" class="btn btn-primary">Ver Horários</a>
+            <a href="#cultos" class="btn btn-primary">Nossos Cultos Fixos</a>
         </div>
     </section>
 
@@ -364,39 +406,27 @@
         <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor.</p>
     </section>
     
-    <section class="content-section fixed-cults" id="horarios">
-        <h2>Horários de Cultos Semanais</h2>
+    <section class="content-section fixed-cults" id="cultos">
+        <h2>Cultos Semanais Fixos</h2>
         <div class="cult-grid">
             <div class="cult-card">
                 <h3>Escola Bíblica Dominical (EBD)</h3>
                 <p><strong>Dia:</strong> Domingo</p>
                 <p><strong>Hora:</strong> 09:00h</p>
-                <p><strong>Descrição:</strong> Estudo e ensino da Bíblia para todas as idades.</p>
+                <p><strong>Descrição:</strong> Estudo da Bíblia para todas as idades.</p>
             </div>
             <div class="cult-card">
-                <h3>Celebração e Louvor</h3>
+                <h3>Culto de Louvor e Adoração</h3>
                 <p><strong>Dia:</strong> Domingo</p>
                 <p><strong>Hora:</strong> 19:00h</p>
-                <p><strong>Descrição:</strong> Culto principal com adoração, louvor e ministração da Palavra.</p>
+                <p><strong>Descrição:</strong> Momento de celebração e Palavra.</p>
             </div>
             <div class="cult-card">
-                <h3>Encontro de Oração</h3>
+                <h3>Culto de Oração e Estudo Bíblico</h3>
                 <p><strong>Dia:</strong> Quarta-feira</p>
                 <p><strong>Hora:</strong> 19:00h</p>
-                <p><strong>Descrição:</strong> Momento dedicado à intercessão e estudo bíblico temático.</p>
+                <p><strong>Descrição:</strong> Intercessão e aprofundamento na Palavra.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="content-section projects" id="projetos">
-        <h2>Projetos Sociais</h2>
-        <div class="project-card">
-            <h3>Projeto Sonho de Criança</h3>
-            <p>O **Projeto Sonho de Criança** é uma iniciativa da Igreja Batista Emanuel focada em oferecer apoio integral a crianças e adolescentes da comunidade de Monte Gordo.</p>
-            <p>Nosso objetivo é proporcionar um ambiente seguro e acolhedor, com atividades que visam o desenvolvimento educacional, social e espiritual, garantindo um futuro mais promissor para cada participante.</p>
-            <a href="https://www.ibemgsonhodecrianca.com.br/" target="_blank" class="btn btn-primary" style="background: #e67e22;">
-                Acessar o Site do Projeto <i class="fas fa-external-link-alt"></i>
-            </a>
         </div>
     </section>
 
@@ -408,15 +438,12 @@
     </section>
     
     <footer id="contato">
-        <h2>Entre em Contato</h2>
-        <p>📍 Monte Gordo, Camaçari-BA</p>
-        <p>📱 **WhatsApp:** <a href="https://wa.me/5571992801895" target="_blank" style="color: #b3d7ff;">(71) 99280-1895</a></p>
-        <p>📞 **Telefone (Ligação):** <a href="tel:+557191361313" style="color: #b3d7ff;">(71) 99136-1313</a></p>
-        <p>📧 **E-mail:** <a href="mailto:contato@ibemg.com.br" style="color: #b3d7ff;">contato@ibemg.com.br</a></p>
-        <p style="margin-top: 1rem;">© 2025 Igreja Batista Emanuel - Todos os direitos reservados.</p>
+        <p>Igreja Batista Emanuel - Monte Gordo</p>
+        <p>Monte Gordo, Camaçari-BA | <a href="tel:+5571988887777" style="color: white; text-decoration: none;">(71) 98888-7777</a></p>
+        <p>© 2025 Todos os direitos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5571992801895" target="_blank" class="whatsapp-float" aria-label="Fale Conosco pelo WhatsApp">
+    <a href="https://wa.me/5571988887777" target="_blank" class="whatsapp-float" aria-label="Fale Conosco pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -481,54 +508,43 @@
                 id: 1,
                 data: "13/11/2025",
                 hora: "17:00",
-                evento: "Estudo de Missões",
-                descricao: "Momento dedicado à intercessão e estudo sobre Missões.",
-                local: "Sala de Reuniões"
+                evento: "Culto de Gratidão",
+                descricao: "Um momento de agradecimento a Deus.",
+                local: "Igreja Batista Emanuel"
             },
             {
                 id: 2,
                 data: "22/11/2025",
                 hora: "20:00",
-                evento: "Acampamento de Jovens",
-                descricao: "Retiro espiritual para a juventude da igreja.",
-                local: "Sítio Primavera"
+                evento: "Vigília Jovem",
+                descricao: "Noite de oração e louvor com a juventude.",
+                local: "Igreja Batista Emanuel"
             },
             {
                 id: 3,
                 data: "25/12/2025",
                 hora: "19:00",
-                evento: "Celebração de Natal",
-                descricao: "Culto especial para celebrar o nascimento de Cristo.",
-                local: "Templo Principal"
+                evento: "Culto de Natal",
+                descricao: "Celebração do nascimento de Jesus.",
+                local: "Igreja Batista Emanuel"
             }
         ];
         
-        /* --- Funções de Admin e SweetAlert --- */
+        /* --- Funções de Admin --- */
 
         function checkPassword() {
             document.getElementById('passwordModal').style.display = 'block';
         }
 
-        // IMPLEMENTAÇÃO SWEETALERT2
-        async function validatePassword() {
+        function validatePassword() {
+            // A senha 'IBEMG2002' está mantida
             const password = document.getElementById('passwordInput').value;
             if (password === 'IBEMG2002') {
                 isAdmin = true;
                 closePasswordModal();
                 openAdmin();
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Bem-vindo!',
-                    text: 'Acesso administrativo concedido.',
-                    timer: 2000,
-                    showConfirmButton: false
-                });
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ops...',
-                    text: 'Senha incorreta!',
-                });
+                alert('Senha incorreta!');
             }
         }
 
@@ -547,19 +563,24 @@
             isAdmin = false;
         }
 
-        /* --- Funções de Persistência e Atualização --- */
+        /* --- Funções de Persistência e Atualização (Corrigidas) --- */
 
+        // Buscar eventos (com fallback para eventos iniciais)
         async function getEvents() {
+             // Simulação de acesso a "storage". Em ambiente real, seria localStorage ou um DB.
             const stored = localStorage.getItem(STORAGE_KEY);
             if (stored) {
                 return JSON.parse(stored);
             }
+            // Se não houver nada no storage, salva os eventos iniciais e retorna eles
             await saveEvents([...eventosIniciais]);
             return [...eventosIniciais];
         }
 
+        // Salvar eventos
         async function saveEvents(eventos) {
             try {
+                // Simulação de salvar em "storage" usando localStorage.
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(eventos));
                 return true;
             } catch (error) {
@@ -568,7 +589,7 @@
             }
         }
 
-        // IMPLEMENTAÇÃO SWEETALERT2
+        // Adicionar evento (Corrigida para garantir atualização)
         async function addEvent() {
             const dateInput = document.getElementById('eventDate');
             const timeInput = document.getElementById('eventTime');
@@ -583,13 +604,13 @@
             const local = localInput.value;
 
             if (!date || !time || !name) {
-                Swal.fire('Atenção', 'Preencha data, hora e nome do evento!', 'warning');
+                alert('Preencha data, hora e nome do evento!');
                 return;
             }
 
             const evento = {
-                id: Date.now(),
-                data: date.split('-').reverse().join('/'),
+                id: Date.now(), // ID único
+                data: date.split('-').reverse().join('/'), // Converte AAAA-MM-DD para DD/MM/AAAA
                 hora: time,
                 evento: name,
                 descricao: desc || 'Sem descrição',
@@ -602,59 +623,58 @@
             const salvou = await saveEvents(eventos);
             
             if (salvou) {
+                // Limpar campos
                 dateInput.value = '';
                 timeInput.value = '';
                 nameInput.value = '';
                 descInput.value = '';
                 localInput.value = '';
                 
+                // ATUALIZAÇÃO PRINCIPAL: Recarrega as listas após a modificação
                 await loadAdminEvents();
                 await loadPublicEvents();
                 
-                Swal.fire('Sucesso!', 'Evento adicionado com sucesso!', 'success');
+                alert('✅ Evento adicionado com sucesso!');
             } else {
-                Swal.fire('Erro', 'Erro ao adicionar evento. Tente novamente.', 'error');
+                alert('❌ Erro ao adicionar evento. Tente novamente.');
             }
         }
 
-        // IMPLEMENTAÇÃO SWEETALERT2
+        // Deletar evento (Corrigida para garantir atualização)
         async function deleteEvent(id) {
-            const result = await Swal.fire({
-                title: 'Confirmar Exclusão',
-                text: "Deseja realmente excluir este evento?",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#dc3545',
-                cancelButtonColor: '#6c757d',
-                confirmButtonText: 'Sim, Excluir!'
-            });
+            if (!confirm('❓ Deseja realmente excluir este evento?')) return;
 
-            if (result.isConfirmed) {
-                const eventos = await getEvents();
-                const novosEventos = eventos.filter(e => e.id !== Number(id)); 
-                
-                const salvou = await saveEvents(novosEventos);
-                
-                if (salvou) {
-                    await loadAdminEvents();
-                    await loadPublicEvents();
-                    Swal.fire('Excluído!', 'Evento excluído com sucesso.', 'success');
-                } else {
-                    Swal.fire('Erro', 'Erro ao excluir evento. Tente novamente.', 'error');
-                }
+            const eventos = await getEvents();
+            // Garante que o ID é tratado como número para a comparação
+            const novosEventos = eventos.filter(e => e.id !== Number(id)); 
+            
+            const salvou = await saveEvents(novosEventos);
+            
+            if (salvou) {
+                // ATUALIZAÇÃO PRINCIPAL: Recarrega as listas após a modificação
+                await loadAdminEvents();
+                await loadPublicEvents();
+                alert('✅ Evento excluído com sucesso!');
+            } else {
+                alert('❌ Erro ao excluir evento. Tente novamente.');
             }
         }
         
-        /* --- Funções de Visualização (Mantidas) --- */
+        /* --- Funções de Visualização --- */
 
+        // Formatar data
         function formatarData(dataStr) {
+            // Espera dataStr no formato DD/MM/AAAA
             const partes = dataStr.split('/');
+            // Cria um objeto Date: new Date(ano, mes-1, dia)
             const data = new Date(partes[2], partes[1] - 1, partes[0]); 
             const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            // Adiciona a primeira letra maiúscula ao dia da semana
             const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
             return dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
         }
 
+        // Carregar eventos públicos (próximos 6)
         async function loadPublicEvents() {
             const container = document.getElementById('events-container');
             container.innerHTML = '<p style="text-align: center;">Carregando eventos...</p>';
@@ -666,12 +686,14 @@
             
             const eventosFuturos = eventos
                 .filter(e => {
+                    // Converte DD/MM/AAAA para um objeto Date comparável
                     const partes = e.data.split('/');
                     const dataEvento = new Date(partes[2], partes[1] - 1, partes[0]);
                     dataEvento.setHours(0, 0, 0, 0);
                     return dataEvento >= hoje;
                 })
                 .sort((a, b) => {
+                    // Cria uma string comparável AAAA/MM/DDHHMM para ordenar
                     const dataHoraA = a.data.split('/').reverse().join('') + a.hora.replace(':', '');
                     const dataHoraB = b.data.split('/').reverse().join('') + b.hora.replace(':', '');
                     if (dataHoraA < dataHoraB) return -1;
@@ -698,6 +720,7 @@
             `).join('');
         }
 
+        // Carregar eventos no admin (Todos os eventos, ordenados por data/hora)
         async function loadAdminEvents() {
             const container = document.getElementById('adminEventsList');
             container.innerHTML = '<p>Carregando...</p>';
@@ -705,6 +728,7 @@
             const eventos = await getEvents();
             
             const eventosOrdenados = eventos.sort((a, b) => {
+                // Cria uma string comparável AAAA/MM/DDHHMM
                 const dataHoraA = a.data.split('/').reverse().join('') + a.hora.replace(':', '');
                 const dataHoraB = b.data.split('/').reverse().join('') + b.hora.replace(':', '');
                 if (dataHoraA < dataHoraB) return -1;
@@ -740,6 +764,7 @@
         window.addEventListener('load', async () => {
             await loadPublicEvents();
             
+            // Adiciona evento para fechar o menu ao clicar em um link (mobile)
             document.querySelectorAll('#nav-menu a').forEach(item => {
                 item.addEventListener('click', () => {
                     const menu = document.getElementById('nav-menu');
@@ -753,9 +778,11 @@
         // Fechar modal ao clicar fora
         window.onclick = function(event) {
             const modal = document.getElementById('passwordModal');
+            const admin = document.getElementById('adminPanel');
             if (event.target == modal) {
                 closePasswordModal();
             }
+            // Não fechar o admin panel ao clicar fora, para evitar perda de dados
         }
     </script>
 </body>
