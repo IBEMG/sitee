@@ -87,7 +87,7 @@
         }
 
         nav a {
-            color: #ffffff;
+            color: #1e5a8e;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
@@ -264,6 +264,77 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
+        
+        /* --- Estilos da Nova Seção Projetos --- */
+
+        .projects {
+            background: #ffffff;
+            padding: 5rem 2rem;
+            border-bottom: 5px solid #e9f5ff;
+        }
+
+        .projects h2 {
+            color: #2980b9;
+        }
+
+        .project-card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            max-width: 450px;
+            text-align: center;
+            border-top: 8px solid #1e5a8e;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            color: #1e5a8e;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            color: #1e5a8e;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-details {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            text-align: left;
+            border-left: 3px solid #2980b9;
+        }
+
+        .project-details p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .btn-small {
+            padding: 0.75rem 1.8rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
 
         /* Footer */
         footer {
@@ -416,6 +487,7 @@
             <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li> 
                 <li><a href="#cultos">Horarios dos Cultos</a></li>
                 <li><a href="#eventos">Eventos</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -440,26 +512,47 @@
         <h2>Sobre Nós</h2>
         <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor.</p>
     </section>
-    
+
+    <section class="content-section projects" id="projetos">
+        <h2>Projetos Sociais da IBE</h2>
+        
+        <div class="project-card-container">
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3>Projeto Sonho de Criança</h3>
+                <p>Nossa missão é levar alegria, educação e o amor de Cristo para as crianças carentes de Monte Gordo.</p>
+                
+                <div class="project-details">
+                    <p>⭐ **Foco:** Apoio educacional, alimentação e evangelismo infantil.</p>
+                    <p>🗓️ **Periodicidade:** Ações mensais e eventos especiais (Páscoa e Natal).</p>
+                    <p>🤝 **Como Ajudar:** Doações de alimentos, brinquedos e voluntariado.</p>
+                </div>
+
+                <a href="https://www.ibemgsonhodecrianca.com.br/" target="_blank" class="btn btn-primary btn-small">Acesse o Site do Projeto</a>
+            </div>
+        </div>
+    </section>
     <section class="content-section fixed-cults" id="cultos">
         <h2>Horarios dos Cultos</h2>
         <div class="cult-grid">
             <div class="cult-card">
                 <h3>Escola Bíblica Dominical (EBD)</h3>
                 <p><strong>Dia:</strong> Domingo</p>
-                <p><strong>Hora:</strong> 09:00h(Amanhã)</p>
+                <p><strong>Hora:</strong> 09:00h</p>
                 <p><strong>Descrição:</strong> Estudo da Bíblia para todas as idades.</p>
             </div>
             <div class="cult-card">
                 <h3>Culto de Louvor e Adoração</h3>
                 <p><strong>Dia:</strong> Domingo</p>
-                <p><strong>Hora:</strong> 19:00h(Noite)</p>
+                <p><strong>Hora:</strong> 19:00h</p>
                 <p><strong>Descrição:</strong> Momento de celebração e Palavra.</p>
             </div>
             <div class="cult-card">
                 <h3>Culto de Oração e Estudo Bíblico</h3>
                 <p><strong>Dia:</strong> Quarta-feira</p>
-                <p><strong>Hora:</strong> 19:00h(Noite)</p>
+                <p><strong>Hora:</strong> 19:00h</p>
                 <p><strong>Descrição:</strong> Intercessão e aprofundamento na Palavra.</p>
             </div>
         </div>
@@ -556,15 +649,15 @@
 
         // Dados iniciais de fallback (usados apenas se o JSONBin.io não responder)
         const FALLBACK_DATA = {
-            versiculo: "Salmos 91:1 - Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará.",
+            versiculo: "Salmos 91:1 - Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará. (Dados de conexão falharam)",
             eventos: [
                 {
                     id: 999,
                     data: "12/12/2025",
                     hora: "19:00",
-                    evento: "Culto de Natal da Família",
-                    descricao: "Celebração do nascimento de Cristo.",
-                    local: "Igreja Batista Emanuel"
+                    evento: "FALHA DE CONEXÃO: Use o Painel Admin para salvar os dados",
+                    descricao: "O site não conseguiu se conectar ao banco de dados online.",
+                    local: "Verifique as chaves de acesso no código"
                 },
             ]
         };
@@ -576,7 +669,6 @@
         // 1. Função para CARREGAR todos os dados (Versículo e Eventos)
         async function loadAllData() {
             try {
-                // Tenta carregar os dados mais recentes do seu Bin
                 const response = await fetch(`${JSONBIN_URL}/latest`, {
                     headers: {
                         'X-Master-Key': JSONBIN_MASTER_KEY 
@@ -584,18 +676,15 @@
                 });
                 
                 if (!response.ok) {
-                    // Se o Bin estiver vazio ou houver erro, retorna os dados de Fallback
                     console.warn(`Bin não encontrado ou vazio (${response.status}). Usando FALLBACK_DATA.`);
                     return FALLBACK_DATA;
                 }
                 
                 const data = await response.json();
                 
-                // Retorna os dados dentro de 'record'
                 return data.record; 
             } catch (error) {
                 console.error('Falha ao carregar dados da API. Usando FALLBACK_DATA:', error);
-                // Em caso de erro de rede, usa os dados de fallback
                 return FALLBACK_DATA;
             }
         }
@@ -604,7 +693,7 @@
         async function saveAllData(dataToSave) {
             try {
                 const response = await fetch(JSONBIN_URL, {
-                    method: 'PUT', // PUT para substituir o conteúdo do Bin
+                    method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-Master-Key': JSONBIN_MASTER_KEY 
@@ -638,19 +727,13 @@
                 return;
             }
             
-            // 1. Carrega todos os dados (para não apagar os eventos)
             const allData = await loadAllData();
-            
-            // 2. Atualiza apenas o campo do versículo
             allData.versiculo = novoVersiculo;
             
-            // 3. Salva a estrutura completa de volta na API
             const salvou = await saveAllData(allData);
             
             if (salvou) {
-                // Atualiza a exibição na página principal imediatamente
                 document.getElementById('versiculo-display').textContent = novoVersiculo;
-                // Limpa o campo de entrada no admin
                 input.value = '';
                 alert('✅ Versículo da Semana atualizado com sucesso para todos! A mudança já está online.');
             }
@@ -751,7 +834,6 @@
         // Carregar eventos públicos (próximos 6)
         async function loadPublicEvents(eventos = null) {
             const container = document.getElementById('events-container');
-            // Se chamado sem argumentos, carrega os dados
             if (eventos === null) {
                 const allData = await loadAllData();
                 eventos = allData.eventos;
@@ -823,7 +905,7 @@
 
         function validatePassword() {
             const password = document.getElementById('passwordInput').value;
-            if (password === 'IBEMG2002') {
+            if (password === 'IBEMG2002') { // Senha fixa
                 isAdmin = true;
                 closePasswordModal();
                 openAdmin();
@@ -883,5 +965,3 @@
     </script>
 </body>
 </html>
-
-
