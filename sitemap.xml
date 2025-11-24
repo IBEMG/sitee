@@ -1,0 +1,34 @@
+xml version=1.0 encoding=UTF-8
+urlset xmlns=httpwww.sitemaps.orgschemassitemap0.9
+
+    url
+        lochttpswww.ibemg.com.brloc
+        priority1.00priority
+    url
+
+    url
+        lochttpswww.ibemg.com.brsobre.htmlloc
+        priority0.80priority
+    url
+
+    url
+        lochttpswww.ibemg.com.brcontato.htmlloc
+        priority0.80priority
+    url
+
+    url
+        lochttpswww.ibemg.com.brministerios.htmlloc
+        priority0.70priority
+    url
+
+    url
+        lochttpswww.ibemg.com.brcultos.htmlloc
+        priority0.70priority
+    url
+
+    url
+        lochttpswww.ibemg.com.brlocalizacao.htmlloc
+        priority0.60priority
+    url
+
+urlset
