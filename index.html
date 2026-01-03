@@ -4,7 +4,8 @@
 
 
     <title>IBEMG – Igreja Batista Emanuel de Monte Gordo</title>
-
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1f2d3d"> 
 <!-- Meta Description -->
 <meta name="description" content="IBEMG - Igreja Batista Emanuel de Monte Gordo. Uma igreja comprometida com a Palavra de Deus, comunhão, serviço e o anúncio do Evangelho. Acompanhe cultos, eventos e ministérios.">
 
@@ -43,7 +44,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -976,6 +981,7 @@
     </script>
 </body>
 </html>
+
 
 
 
