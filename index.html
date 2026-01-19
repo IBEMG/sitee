@@ -29,6 +29,24 @@
 <meta name="twitter:image" content="https://www.ibemg.com.br/imagens/preview.jpg">
 
 
+
+  <!-- postagens -->
+    <div class="carousel">
+  <div class="carousel-track">
+    <div class="card">Item 1</div>
+    <div class="card">Item 2</div>
+    <div class="card">Item 3</div>
+    <div class="card">Item 4</div>
+    <div class="card">Item 5</div>
+    <div class="card">Item 6</div>
+    <div class="card">Item 7</div>
+    <div class="card">Item 8</div>
+    <div class="card">Item 9</div>
+    <div class="card">Item 10</div>
+  </div>
+</div>
+    
+
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -333,6 +351,58 @@ if ("serviceWorker" in navigator) {
         .whatsapp-float:hover {
             background-color: #128c7e;
         }
+
+
+
+
+       /*postagens*/
+    .carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+
+  /* remove barra de rolagem */
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 calc(100% / 3 - 11px);
+  height: 180px;
+  background: #eaeaea;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  scroll-snap-align: start;
+}
+    @media (max-width: 900px) {
+  .card {
+    flex: 0 0 calc(100% / 2 - 10px); /* 2 por vez */
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    flex: 0 0 100%; /* 1 por vez */
+  }
+}
+
+    
 
         /* Modal (Estilos) */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
@@ -981,6 +1051,7 @@ if ("serviceWorker" in navigator) {
     </script>
 </body>
 </html>
+
 
 
 
