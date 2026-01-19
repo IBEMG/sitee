@@ -44,6 +44,11 @@
             padding: 0;
             box-sizing: border-box;
         }
+        <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+    </script>
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1051,14 +1056,11 @@
 
         // Garante que o script de inicialização seja executado após o carregamento da página
         window.onload = init;
-        <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js");
-}
-
+        
     </script>
 </body>
 </html>
+
 
 
 
