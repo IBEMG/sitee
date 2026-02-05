@@ -128,57 +128,73 @@
             color: #2980b9;
         }
 
+
+
+
+
+        
+        /* Hero Section */
         .hero {
-            height: 600px;
-            background: linear-gradient(135deg, rgba(30, 90, 142, 0.95), rgba(41, 128, 185, 0.9)), 
-                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e5a8e" width="1200" height="600"/><path fill="%232980b9" opacity="0.3" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
+            min-height: 80vh;
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.7)), 
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=1600') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .hero-content {
             text-align: center;
             color: white;
-            max-width: 900px;
             padding: 2rem;
         }
 
+        .hero-content {
+            max-width: 800px;
+        }
+
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
+        /* Buttons */
         .btn {
             padding: 1rem 2.5rem;
-            border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
-            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
-            background: #2980b9;
-            color: white;
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
 
         .btn-primary:hover {
-            background: #1e5a8e;
             transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+            background: var(--primary-light);
+            color: white;
+
         }
 
+
+
+
+
+        
+            
         .content-section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -518,9 +534,16 @@
         <p id="versiculo-display">Carregando o Versículo...</p>
     </section>
 
-    <section class="content-section" id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>A Igreja Batista Emanuel (IBE) é uma comunidade cristã em Monte Gordo, Camaçari-BA, dedicada a viver o significado do nosso nome: DEUS CONOSCO. Nossa missão é proclamar o evangelho de Jesus Cristo, promover comunhão verdadeira e servir com amor.</p>
+      <section class="hero" id="home">
+        <div class="hero-content">
+            <span style="text-transform: uppercase; letter-spacing: 3px; font-weight: 700; opacity: 0.8;">Bem-vindo à IBE</span>
+            <h1>Deus Conosco</h1>
+            <p>Uma comunidade de fé, esperança e amor em Monte Gordo.</p>
+            <div class="hero-btns">
+                <a href="#cultos" class="btn btn-primary">Ver Horários</a>
+                <a href="#sobre" class="btn" style="color: white; border: 2px solid white; margin-left: 10px;">Conheça-nos</a>
+            </div>
+        </div>
     </section>
    
     <section class="content-section fixed-cults" id="cultos">
@@ -1042,6 +1065,7 @@
     </script>
 </body>
 </html>
+
 
 
 
