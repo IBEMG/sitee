@@ -136,16 +136,18 @@
 
         
         /* Hero Section */
-        .hero {
-            min-height: 80vh;
-            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.7)), 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(30, 58, 138, 0.6)), 
                         url('https://scontent.fssa14-1.fna.fbcdn.net/v/t39.30808-6/483525545_3122994277839799_7705449970198400862_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=woNjnL0d4bMQ7kNvwGP1EfE&_nc_oc=Adm2O3r7ia2crB-dsrIuXQrRO32l32IbGZ1gxrCN4NqlcLohJhmxg-aX5O_ST4AX6Nw&_nc_zt=23&_nc_ht=scontent.fssa14-1.fna&_nc_gid=hO0un7stY0r55B_mQ9lmeQ&oh=00_AfukSFQaz2F9egkVMSnsK3aj5KTLesjtaI5Frzqadfq6HQ&oe=698D43AC') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
+            filter: blur(5px); /* Aumente ou diminua este valor para o borrão */
+            transform: scale(1.1); /* Aumenta um pouco para não aparecer bordas brancas por causa do blur */
+            z-index: 1;
         }
 
         .hero-content {
@@ -1123,6 +1125,7 @@
     </script>
 </body>
 </html>
+
 
 
 
