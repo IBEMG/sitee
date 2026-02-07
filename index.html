@@ -136,18 +136,7 @@
 
         
         /* Hero Section */
-        .hero {
-    min-height: 80vh;
-    background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.7)), 
-                url('https://scontent.fssa14-1.fna.fbcdn.net/v/t39.30808-6/483525545_3122994277839799_7705449970198400862_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=woNjnL0d4bMQ7kNvwGP1EfE&_nc_oc=Adm2O3r7ia2crB-dsrIuXQrRO32l32IbGZ1gxrCN4NqlcLohJhmxg-aX5O_ST4AX6Nw&_nc_zt=23&_nc_ht=scontent.fssa14-1.fna&_nc_gid=BKZb3EGA8JwlgfwwvcV3rQ&oh=00_Afv6dwPafQq5vJx2woHox8qEaro63ucnl0gq0g30nkAwQA&oe=698D43AC') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 2rem;
-}    overflow: hidden;   
-        
+       
 
         /* Corrigido: pseudo-elemento para o fundo desfocado */
         .hero::before {
@@ -164,6 +153,17 @@
             z-index: 1;
         }adding: 2rem;
 }
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative; 
+            overflow: hidden;   
+        }
 
         .hero-content {
             max-width: 800px;
